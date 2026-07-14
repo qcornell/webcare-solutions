@@ -79,3 +79,16 @@ Testimonial slots (2) · OG image (currently lov_hero.webp — replace with bran
 **Verified this pass:** tags balanced on both pages · all 11 local asset refs resolve · both inline scripts pass `node --check` · JSON-LD parses (`ProfessionalService`) · no unresolved `SLOT` in `<head>` · shipped payload **469 KB** excl. CDN libs (budget 600 KB).
 
 **Still open:** testimonial slots (2, honestly labeled) · Phase 4 hero · `_qa/check.cjs` visual suite needs a run on the host (sandbox chromium lacks `libXdamage`).
+
+## Phase 4 — "Crystallize" hero (2026-07-14)
+
+The flagship's signature escalated one tier. Three strictly-additive layers, all gated to the desktop/high-memory tier (`!light && !reduce`); mobile and reduced-motion keep the existing particle hero + static fallback.
+
+1. **Bloom** — `EffectComposer` + `UnrealBloomPass` (+ `GammaCorrectionShader` tail pass; r128 has no `OutputPass`) via jsDelivr's `three@0.128.0/examples/js` UMD addons. **No build step, no r128 migration, no GLTFLoader.** Bloom strength crescendos `0.3 → 1.0` with shield formation. Feature-detected (`typeof THREE.EffectComposer`); any addon-load failure falls back to the direct render.
+2. **Cursor-reactive field** — shield particles repel from the pointer via an `onBeforeCompile` vertex-shader injection (uniforms `uMouse`/`uTime`/`uRadius`), plus a soft magenta halo `Sprite` that tracks the cursor. Makes the "this field is alive — move your pointer" copy literally true.
+3. **Crystallizing chrome shield** — a solid 3D mark built with `ExtrudeGeometry` (beveled) from the **exact same cubic-Bezier outline** the particles form (`segs[]`), shaded with a custom Fresnel/iridescent `ShaderMaterial` (no external GLB, no model asset). It scales in (`form 0 → 1`) and rotates to settle as the field assembles; particles dim past 0.7 so the solid mark reads. Under bloom it glows.
+
+**Deferred (optional):** the pinned scroll-cinema beat. The crystallize crescendo already plays on the existing scrub (assemble → bloom → crystallize as you scroll the hero). Pinning was the one piece avoided for CLS safety (it would also require bridging the `initScene` closure into `initScroll`); revisit only behind a CLS=0 gate.
+
+**Verified (`_qa/check.cjs`, playwright chromium):** desktop `class="js fx"`, canvas live, **zero console errors** at idle / mid-formation / full crystallize; mobile `light` tier runs the particle hero (bloom + crystallize gated off); `prefers-reduced-motion` → `js reduce no-fx` static hero, zero errors; WebGL-disabled → `js no-fx` static hero, zero errors. Full suite green: `favicon`, `form`, `tints`, `proof`, `atmosphere`, `hero`, `reduce`, `nofx`, `noerrors` (desktop + mobile, zero overflow).
+

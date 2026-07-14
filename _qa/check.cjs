@@ -17,7 +17,7 @@ async function loadPage({ width = 1440, height = 900, reduce = false, noFx = fal
   });
   page.on("pageerror", (e) => errors.push(String(e)));
   if (reduce) {
-    await ctx.emulateMedia({ reducedMotion: "reduce" });
+    await page.emulateMedia({ reducedMotion: "reduce" });
   }
   if (noFx) {
     await page.addInitScript(() => {
@@ -212,6 +212,36 @@ const checks = {
         await page.mouse.wheel(0, 620);
         await page.waitForTimeout(350);
         await page.screenshot({ path: `${SHOTS}/hero-formed.png` });
+      }
+      await browser.close();
+    }
+  },
+  reduce: async () => {
+    for (const [w, h, n] of [
+      [1440, 900, "desk"],
+      [390, 844, "mob"],
+    ]) {
+      const { browser, page, errors } = await loadPage({ width: w, height: h, reduce: true });
+      const cls = await page.evaluate(() => document.documentElement.className);
+      console.log(`reduce ${n}: class="${cls}" errors=${errors.length}`);
+      if (errors.length) {
+        console.log(errors.join("\n"));
+        process.exitCode = 1;
+      }
+      await browser.close();
+    }
+  },
+  nofx: async () => {
+    for (const [w, h, n] of [
+      [1440, 900, "desk"],
+      [390, 844, "mob"],
+    ]) {
+      const { browser, page, errors } = await loadPage({ width: w, height: h, noFx: true });
+      const cls = await page.evaluate(() => document.documentElement.className);
+      console.log(`nofx ${n}: class="${cls}" errors=${errors.length}`);
+      if (errors.length) {
+        console.log(errors.join("\n"));
+        process.exitCode = 1;
       }
       await browser.close();
     }

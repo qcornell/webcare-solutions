@@ -1027,6 +1027,14 @@ img{max-width:100%;display:block}
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+<script defer src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/EffectComposer.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/MaskPass.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/ShaderPass.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/CopyShader.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/LuminosityHighPassShader.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/GammaCorrectionShader.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 <script>
@@ -1306,9 +1314,22 @@ function initScene(canvas){
   var dust=new THREE.Points(dGeo,new THREE.PointsMaterial({color:0xB7ACC6,size:0.08,map:dot,transparent:true,opacity:0.3,depthWrite:false,blending:THREE.AdditiveBlending}));
   scene.add(dust);
 
+  /* bloom post-processing — desktop/high-mem tier only. r128 has no OutputPass, so GammaCorrection is the tail pass. Feature-detected: if any addon failed to load, composer stays null and the scene renders normally. */
+  var composer=null,bloom=null;
+  if(!light&&typeof THREE.EffectComposer==='function'&&typeof THREE.UnrealBloomPass==='function'){
+    renderer.toneMapping=THREE.ACESFilmicToneMapping;
+    composer=new THREE.EffectComposer(renderer);
+    composer.setPixelRatio(Math.min(window.devicePixelRatio||1,1.5));
+    composer.setSize(W,H);
+    composer.addPass(new THREE.RenderPass(scene,cam));
+    bloom=new THREE.UnrealBloomPass(new THREE.Vector2(W,H),0.7,0.4,0.6);
+    composer.addPass(new THREE.ShaderPass(THREE.GammaCorrectionShader));
+  }
+
   function layout(){
     W=hero.clientWidth;H=hero.clientHeight;
     renderer.setSize(W,H,false);
+    if(composer)composer.setSize(W,H);
     cam.aspect=W/H;cam.updateProjectionMatrix();
     if(W<760){shield.position.set(0,2.3,1);shield.scale.set(0.72,0.72,0.72);}
     else{shield.position.set(3.05,1.15,1.2);shield.scale.set(1,1,1);}
@@ -1367,7 +1388,8 @@ function initScene(canvas){
     cam.lookAt(st.cmx*0.4,0.45+0.85*p,0);
     lines.material.opacity=0.08+p*0.03;
 
-    renderer.render(scene,cam);
+    if(composer){bloom.strength=0.3+st.form*0.7;composer.render();}
+    else{renderer.render(scene,cam);}
     rafId=requestAnimationFrame(frame);
   }
   function start(){if(running||!visible||!tabVisible)return;running=true;lastNow=0;rafId=requestAnimationFrame(frame);}

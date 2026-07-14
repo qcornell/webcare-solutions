@@ -194,6 +194,28 @@ const checks = {
     }
     await browser.close();
   },
+  hero: async () => {
+    for (const [w, h, n] of [
+      [1440, 900, "desk"],
+      [390, 844, "mob"],
+    ]) {
+      const { browser, page, errors } = await loadPage({ width: w, height: h });
+      const cls = await page.evaluate(() => document.documentElement.className);
+      const hasCanvas = await page.evaluate(() => !!document.getElementById("gl"));
+      console.log(`${n}: class="${cls}" canvas=${hasCanvas} errors=${errors.length}`);
+      if (errors.length) {
+        console.log(errors.join("\n"));
+        process.exitCode = 1;
+      }
+      if (n === "desk") {
+        await page.screenshot({ path: `${SHOTS}/hero-idle.png` });
+        await page.mouse.wheel(0, 620);
+        await page.waitForTimeout(350);
+        await page.screenshot({ path: `${SHOTS}/hero-formed.png` });
+      }
+      await browser.close();
+    }
+  },
 };
 
 (async () => {

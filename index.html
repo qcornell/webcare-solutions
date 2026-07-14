@@ -1290,7 +1290,18 @@ function initScene(canvas){
   sGeo.setAttribute('position',sAttr);
   sGeo.setAttribute('color',new THREE.BufferAttribute(sCol,3));
   var sBase=light?0.17:0.14;
-  var sPts=new THREE.Points(sGeo,new THREE.PointsMaterial({size:sBase,map:dot,vertexColors:true,transparent:true,opacity:0.92,depthWrite:false,blending:THREE.AdditiveBlending}));
+  var sMat=new THREE.PointsMaterial({size:sBase,map:dot,vertexColors:true,transparent:true,opacity:0.92,depthWrite:false,blending:THREE.AdditiveBlending});
+  var sPts=new THREE.Points(sGeo,sMat);
+  /* cursor-reactive repel — particles ease away from the pointer in the vertex shader (desktop tier). Safe: if unsupported, the field simply won't repel. */
+  var su={uMouse:{value:new THREE.Vector2(0,0)},uTime:{value:0},uRadius:{value:0.5}};
+  if(!light&&sMat.onBeforeCompile!==undefined){
+    sMat.onBeforeCompile=function(shader){
+      shader.uniforms.uMouse=su.uMouse;shader.uniforms.uTime=su.uTime;shader.uniforms.uRadius=su.uRadius;
+      shader.vertexShader='uniform vec2 uMouse; uniform float uTime; uniform float uRadius;\n'+shader.vertexShader;
+      shader.vertexShader=shader.vertexShader.replace('#include <begin_vertex>',
+        '#include <begin_vertex>\n  vec2 _ctr=uMouse*3.0; float _d=distance(position.xy,_ctr); float _f=smoothstep(uRadius,0.0,_d); transformed.xy+=normalize(position.xy-_ctr+vec2(0.001))*_f*0.42;');
+    };
+  }
   var shield=new THREE.Group();
   shield.add(sPts);
   scene.add(shield);
@@ -1305,6 +1316,10 @@ function initScene(canvas){
   var glow=new THREE.Sprite(glowMat);
   glow.scale.set(7.5,7.5,1);glow.position.z=-0.5;
   shield.add(glow);
+  /* cursor halo — a soft glow that tracks the pointer so "this field is alive" is literally true */
+  var halo=new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(gcv),color:0xff7cc2,transparent:true,opacity:0,blending:THREE.AdditiveBlending,depthWrite:false}));
+  halo.scale.set(2.6,2.6,1);
+  shield.add(halo);
 
   /* ambient dust for depth */
   var DN=light?110:240;
@@ -1337,10 +1352,11 @@ function initScene(canvas){
   layout();
 
   /* state + interaction */
-  var st={ps:0,mx:0,my:0,cmx:0,cmy:0,form:0};
+  var st={ps:0,mx:0,my:0,cmx:0,cmy:0,form:0,moved:0};
   window.addEventListener('pointermove',function(e){
     st.mx=(e.clientX/window.innerWidth-0.5)*2;
     st.my=(e.clientY/window.innerHeight-0.5)*2;
+    st.moved=1;
   },{passive:true});
 
   function smooth(a,b,x){var u=Math.min(1,Math.max(0,(x-a)/(b-a)));return u*u*(3-2*u);}
@@ -1382,6 +1398,9 @@ function initScene(canvas){
     dust.rotation.y=t*0.008;
 
     st.cmx+=(st.mx-st.cmx)*0.04; st.cmy+=(st.my-st.cmy)*0.04;
+    su.uMouse.value.set(st.cmx,st.cmy); su.uTime.value=t;
+    halo.position.set(st.cmx*3,st.cmy*3,0.3);
+    halo.material.opacity+=((st.moved?0.5:0)-halo.material.opacity)*0.08;
     cam.position.x=st.cmx*1.25;
     cam.position.y=0.7+1.35*p-st.cmy*0.55;
     cam.position.z=11-3.1*p;

@@ -1,0 +1,9 @@
+# dev-only QA artifacts (regenerable)
+_qa/_shots/
+
+# local render/QA scratch
+favicon-lab.png
+_render-icons.cjs
+
+# netlify build output
+dist/

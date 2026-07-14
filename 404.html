@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Page not found — WebCare Solutions</title>
+<meta name="robots" content="noindex" />
+<meta name="theme-color" content="#0D0A14" />
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{--ink:#0D0A14;--accent:#F0288F;--accent-soft:#FF7CC2;--t-light:#F2ECF7;--t-light-mut:#A99EB4;--line-d:rgba(242,236,247,.14)}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{min-height:100vh;display:grid;place-items:center;padding:32px 22px;background:var(--ink);color:var(--t-light);font:400 1rem/1.6 Inter,system-ui,sans-serif;text-align:center;position:relative;overflow-x:hidden}
+  .glow{position:absolute;width:60vw;height:60vw;max-width:760px;max-height:760px;right:-14vw;top:-18vw;border-radius:50%;filter:blur(80px);background:radial-gradient(circle,rgba(240,40,143,.30),transparent 66%);pointer-events:none}
+  .wrap{position:relative;z-index:1;max-width:540px}
+  .shield{width:64px;height:auto;margin-bottom:26px}
+  .code{font:700 clamp(3.4rem,9vw,5rem)/1 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.03em;background:linear-gradient(120deg,#FF7CC2,#F0288F 55%,#A80E63);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;margin-bottom:10px}
+  h1{font:600 clamp(1.4rem,3.4vw,1.9rem)/1.25 'Space Grotesk',system-ui,sans-serif;margin-bottom:14px}
+  p{color:var(--t-light-mut);margin-bottom:30px}
+  .ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;font:600 1rem/1 Inter,system-ui,sans-serif;text-decoration:none;border-radius:16px;padding:16px 28px;min-height:52px;border:1px solid transparent;transition:transform .25s,box-shadow .25s,background .25s,border-color .25s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-p{background:var(--accent);color:var(--ink);box-shadow:0 6px 24px -8px rgba(240,40,143,.55)}
+  .btn-p:hover{background:#FF41A3}
+  .btn-g{border-color:var(--line-d);color:var(--t-light);background:rgba(242,236,247,.03)}
+  .btn-g:hover{border-color:rgba(255,124,194,.5);background:rgba(240,40,143,.08)}
+</style>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+<main class="wrap">
+  <svg class="shield" viewBox="0 0 48 56" aria-hidden="true">
+    <path d="M24 2 44 9v17c0 14-8.5 23.5-20 28C12.5 49.5 4 40 4 26V9Z" fill="none" stroke="#F2ECF7" stroke-width="1.4" opacity=".5"/>
+    <path d="M15 28l6.5 6.5L37 18" stroke="#F0288F" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <div class="code">404</div>
+  <h1>This page isn’t here — but we are.</h1>
+  <p>The link may be old or mistyped. Everything we do lives on the home page, and a real person answers the phone.</p>
+  <div class="ctas">
+    <a class="btn btn-p" href="/">Back to home</a>
+    <a class="btn btn-g" href="tel:+19795956330">Call (979) 595-6330</a>
+  </div>
+</main>
+</body>
+</html>

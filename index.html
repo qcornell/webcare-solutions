@@ -1,0 +1,1423 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>WebCare Solutions — Websites Built, Then Looked After · Bryan–College Station, TX</title>
+<meta name="description" content="Premium websites for churches and local businesses in Bryan–College Station and Houston — online giving, e-commerce, hosting, SEO, and the monthly WebCare Plan. Call (979) 595-6330." />
+<meta name="theme-color" content="#0D0A14" />
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" />
+<link rel="icon" href="assets/favicon-16.png" sizes="16x16" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+
+<!-- Social cards -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="WebCare Solutions — websites built, then looked after" />
+<meta property="og:description" content="Web design + monthly care for churches and businesses in Bryan–College Station & Houston. Updates, edits, backups, and a real person when you call: (979) 595-6330." />
+<meta property="og:image" content="https://webcare.solutions/assets/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="WebCare Solutions — websites built, then looked after." />
+<meta property="og:url" content="https://webcare.solutions/" />
+<link rel="canonical" href="https://webcare.solutions/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://webcare.solutions/assets/og-image.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "WebCare Solutions",
+  "url": "https://webcare.solutions",
+  "telephone": "+1-979-595-6330",
+  "slogan": "Websites built, then looked after.",
+  "description": "Web design studio in Bryan–College Station, Texas. Premium websites for churches and local businesses — plus hosting, SEO, and the monthly WebCare Plan (updates, edits, backups, support).",
+  "address": { "@type": "PostalAddress", "addressLocality": "Bryan–College Station", "addressRegion": "TX", "addressCountry": "US" },
+  "areaServed": [
+    { "@type": "City", "name": "Bryan" },
+    { "@type": "City", "name": "College Station" },
+    { "@type": "City", "name": "Houston" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Church community websites with online giving" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Business websites & e-commerce" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web hosting & WordPress maintenance" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO & digital marketing (Google Ads / PPC)" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "The WebCare Plan — monthly updates, edits, backups & support" } }
+    ]
+  }
+}
+</script>
+
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --ink:#0D0A14; --ink-2:#130F1E; --ink-3:#1B1529;
+  --paper:#FBF8FB; --paper-2:#F4EDF3;
+  --accent:#F0288F; --accent-soft:#FF7CC2; --accent-deep:#A80E63;
+  --cool:#7A6CF5;
+  --t-dark:#241B2E; --t-dark-mut:#5D5468;
+  --t-light:#F2ECF7; --t-light-mut:#B7ACC6;
+  --line-d:rgba(242,236,247,.11); --line-l:rgba(36,27,46,.12);
+  --disp:'Space Grotesk',sans-serif; --body:'Inter',system-ui,sans-serif;
+  --fs-900:clamp(2.45rem,5.6vw + 1rem,4.7rem);
+  --fs-800:clamp(1.9rem,2.9vw + .7rem,3.1rem);
+  --fs-700:clamp(1.45rem,1.4vw + .8rem,1.9rem);
+  --fs-600:clamp(1.18rem,.6vw + 1rem,1.35rem);
+  --wrap:1200px; --pad:clamp(20px,4.4vw,48px);
+  --r:16px; --r-lg:24px;
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  --m-mesh-w:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='130' viewBox='0 0 150 130'%3E%3Cg fill='none' stroke='%23EDE4F6' stroke-width='1.1'%3E%3Cpath d='M20 26 64 12m0 0 58 24M20 26l18 62m0 0 56-16m0 0 48 44M94 72 122 36'/%3E%3C/g%3E%3Cg fill='%23EDE4F6'%3E%3Ccircle cx='20' cy='26' r='1.7'/%3E%3Ccircle cx='64' cy='12' r='1.7'/%3E%3Ccircle cx='122' cy='36' r='1.7'/%3E%3Ccircle cx='38' cy='88' r='1.7'/%3E%3Ccircle cx='94' cy='72' r='1.7'/%3E%3Ccircle cx='142' cy='116' r='1.7'/%3E%3C/g%3E%3C/svg%3E");
+  --m-mesh-i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='130' viewBox='0 0 150 130'%3E%3Cg fill='none' stroke='%23241B2E' stroke-width='1.1'%3E%3Cpath d='M20 26 64 12m0 0 58 24M20 26l18 62m0 0 56-16m0 0 48 44M94 72 122 36'/%3E%3C/g%3E%3Cg fill='%23241B2E'%3E%3Ccircle cx='20' cy='26' r='1.7'/%3E%3Ccircle cx='64' cy='12' r='1.7'/%3E%3Ccircle cx='122' cy='36' r='1.7'/%3E%3Ccircle cx='38' cy='88' r='1.7'/%3E%3Ccircle cx='94' cy='72' r='1.7'/%3E%3Ccircle cx='142' cy='116' r='1.7'/%3E%3C/g%3E%3C/svg%3E");
+  --m-shield-w:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='104' height='120' viewBox='0 0 104 120'%3E%3Cg fill='none' stroke='%23EDE4F6' stroke-width='1.1'%3E%3Cpath d='M52 34l17 6.2v11.6c0 10-7 17.4-17 21.2-10-3.8-17-11.2-17-21.2V40.2Z'/%3E%3Cpath d='M45 52.5l5.2 5.2L61 45.5'/%3E%3C/g%3E%3C/svg%3E");
+  --m-shield-i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='104' height='120' viewBox='0 0 104 120'%3E%3Cg fill='none' stroke='%23241B2E' stroke-width='1.1'%3E%3Cpath d='M52 34l17 6.2v11.6c0 10-7 17.4-17 21.2-10-3.8-17-11.2-17-21.2V40.2Z'/%3E%3Cpath d='M45 52.5l5.2 5.2L61 45.5'/%3E%3C/g%3E%3C/svg%3E");
+  --m-check-i:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='46' viewBox='0 0 46 46'%3E%3Cpath d='M16 23.5l5 5 10-12' fill='none' stroke='%23241B2E' stroke-width='1.1'/%3E%3C/svg%3E");
+  --m-check-w:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='46' viewBox='0 0 46 46'%3E%3Cpath d='M16 23.5l5 5 10-12' fill='none' stroke='%23EDE4F6' stroke-width='1.1'/%3E%3C/svg%3E");
+  --mottle:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500'%3E%3Cfilter id='m'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23m)'/%3E%3C/svg%3E");
+}
+
+/* ============ BASE ============ */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--body);font-size:1.0625rem;line-height:1.7;color:var(--t-dark);background:var(--ink);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--disp);line-height:1.08;margin:0 0 .5em;letter-spacing:-.015em;text-wrap:balance}
+p{margin:0 0 1.1em;text-wrap:pretty}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--pad)}
+.skip{position:absolute;left:-9999px;top:0;background:var(--accent);color:var(--ink);padding:12px 20px;z-index:200;font-weight:600;border-radius:0 0 12px 0}
+.skip:focus{left:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.dark :focus-visible{outline-color:var(--accent-soft)}
+::selection{background:var(--accent);color:var(--ink)}
+
+/* sections */
+.sec{position:relative;padding:clamp(84px,11vw,148px) 0;overflow:clip}
+.sec>.wrap{position:relative;z-index:3}
+.dark{background:var(--ink);color:var(--t-light)}
+.dark p{color:var(--t-light-mut)}
+.light{background:var(--paper);color:var(--t-dark)}
+.light p{color:var(--t-dark-mut)}
+.light.alt{background:var(--paper-2)}
+.cut-top{margin-top:-4.5vw;clip-path:polygon(0 4.5vw,100% 0,100% 100%,0 100%);padding-top:calc(clamp(84px,11vw,148px) + 4.5vw)}
+
+/* atmosphere layers */
+.atm{position:absolute;inset:0;pointer-events:none;z-index:0;background-repeat:repeat}
+.grain-d{background-image:var(--grain);opacity:.13;mix-blend-mode:overlay}
+.grain-l{background-image:var(--grain);opacity:.11;mix-blend-mode:multiply}
+.wash-l{background:radial-gradient(58% 66% at 86% -8%,rgba(240,40,143,.075),transparent 66%),radial-gradient(48% 60% at -8% 106%,rgba(122,108,245,.06),transparent 70%)}
+.wash-d{background:radial-gradient(56% 60% at 82% -6%,rgba(240,40,143,.11),transparent 64%),radial-gradient(50% 62% at -10% 110%,rgba(122,108,245,.10),transparent 68%)}
+.mesh-d{background:radial-gradient(42% 50% at 18% 22%,rgba(122,108,245,.45),transparent 65%),radial-gradient(38% 44% at 82% 26%,rgba(240,40,143,.30),transparent 68%),radial-gradient(52% 58% at 72% 88%,rgba(168,14,99,.50),transparent 70%),radial-gradient(62% 60% at 28% 92%,rgba(19,15,30,.55),transparent 75%);mix-blend-mode:screen;opacity:.85}
+.mottle{background-image:var(--mottle);background-size:500px 500px;opacity:.09;mix-blend-mode:multiply}
+.vin-warm{background:radial-gradient(48% 42% at 50% 40%,rgba(255,124,194,.10),transparent 60%)}
+.vin-edge{background:radial-gradient(130% 105% at 50% 45%,transparent 48%,rgba(10,4,12,.62) 100%)}
+.r-feather{position:absolute;left:0;right:0;top:0;height:140px;background:linear-gradient(to bottom,var(--ink),transparent);pointer-events:none;z-index:1}
+#contact .grain-d{opacity:.22}
+.mot{opacity:.05}
+.mot-shield-r{background-image:var(--m-shield-i);opacity:.07;-webkit-mask-image:radial-gradient(85% 115% at 103% 12%,#000 22%,transparent 66%);mask-image:radial-gradient(85% 115% at 103% 12%,#000 22%,transparent 66%)}
+.mot-mesh-bl{background-image:var(--m-mesh-w);opacity:.045;-webkit-mask-image:radial-gradient(80% 105% at -5% 108%,#000 22%,transparent 64%);mask-image:radial-gradient(80% 105% at -5% 108%,#000 22%,transparent 64%)}
+.mot-check-tl{background-image:var(--m-check-i);opacity:.065;-webkit-mask-image:radial-gradient(70% 95% at -4% -6%,#000 18%,transparent 60%);mask-image:radial-gradient(70% 95% at -4% -6%,#000 18%,transparent 60%)}
+.mot-shield-w{background-image:var(--m-shield-w);opacity:.04;-webkit-mask-image:radial-gradient(80% 110% at 104% 88%,#000 20%,transparent 62%);mask-image:radial-gradient(80% 110% at 104% 88%,#000 20%,transparent 62%)}
+.mot-mesh-l{background-image:var(--m-mesh-i);opacity:.045;-webkit-mask-image:radial-gradient(75% 105% at -6% 30%,#000 20%,transparent 60%);mask-image:radial-gradient(75% 105% at -6% 30%,#000 20%,transparent 60%)}
+.mot-check-w{background-image:var(--m-check-w);opacity:.04;-webkit-mask-image:radial-gradient(70% 100% at 105% 105%,#000 16%,transparent 58%);mask-image:radial-gradient(70% 100% at 105% 105%,#000 16%,transparent 58%)}
+.glow{position:absolute;pointer-events:none;z-index:0;border-radius:50%;filter:blur(70px)}
+
+/* eyebrow + headers */
+.eye{font:600 .78rem/1 var(--body);letter-spacing:.22em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;margin:0 0 18px}
+.eye::before{content:"";width:26px;height:2px;background:currentColor;border-radius:2px;opacity:.85}
+.light .eye{color:var(--accent-deep)}
+.dark .eye{color:var(--accent-soft)}
+.h2{font-size:var(--fs-800);font-weight:700;max-width:20ch}
+.lede{font-size:var(--fs-600);max-width:56ch}
+.shead{margin-bottom:clamp(40px,6vw,72px)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:600 1rem/1 var(--body);text-decoration:none;border-radius:16px;padding:17px 30px;min-height:52px;border:1px solid transparent;cursor:pointer;transition:transform .25s cubic-bezier(.2,.9,.3,1.4),box-shadow .25s,background .25s,border-color .25s;will-change:transform}
+.btn svg{transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.btn:hover svg,.btn:focus-visible svg{transform:translateX(3px)}
+.btn-p{background:var(--accent);color:var(--ink);box-shadow:0 6px 24px -8px rgba(240,40,143,.55)}
+.btn-p:hover{background:#FF41A3;box-shadow:0 10px 34px -8px rgba(240,40,143,.7);transform:translateY(-2px)}
+.btn-g{border-color:var(--line-d);color:var(--t-light);background:rgba(242,236,247,.03)}
+.btn-g:hover{border-color:rgba(255,124,194,.5);background:rgba(240,40,143,.08);transform:translateY(-2px)}
+.light .btn-g{border-color:var(--line-l);color:var(--t-dark);background:rgba(36,27,46,.02)}
+.light .btn-g:hover{border-color:var(--accent-deep);background:rgba(168,14,99,.06)}
+.btn svg{flex:none}
+
+/* text link w/ underline draw */
+.tl{font-weight:600;text-decoration:none;position:relative;padding-bottom:3px;background:linear-gradient(currentColor,currentColor) no-repeat 0 100%/0 2px;transition:background-size .35s ease}
+.tl:hover{background-size:100% 2px}
+.light .tl{color:var(--accent-deep)}
+.dark .tl{color:var(--accent-soft)}
+
+/* ============ NAV ============ */
+.nav{position:fixed;inset:0 0 auto;z-index:100;transition:background .35s,box-shadow .35s,border-color .35s;border-bottom:1px solid transparent}
+.nav.on{background:rgba(13,10,20,.78);-webkit-backdrop-filter:blur(14px) saturate(1.3);backdrop-filter:blur(14px) saturate(1.3);border-color:var(--line-d)}
+.nav-in{display:flex;align-items:center;gap:26px;min-height:74px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--t-light);font-family:var(--disp);margin-right:auto}
+.brand svg{width:29px;height:34px;flex:none}
+.brand b{font-size:1.22rem;font-weight:700;letter-spacing:-.01em}
+.brand b i{font-style:normal;color:var(--accent-soft)}
+.brand span{font-weight:500;font-size:1.22rem;color:var(--t-light-mut);letter-spacing:-.01em}
+.brand-logo{height:34px;width:auto;flex:none;display:block}
+.brand .brand-sub{font-weight:500;font-size:1.18rem;color:var(--t-light-mut);letter-spacing:-.01em;margin-top:2px}
+.foot-brand .brand-logo{height:40px}
+@media(max-width:560px){.brand .brand-sub{display:none}.brand-logo{height:30px}}
+.nav-links{display:flex;gap:6px;list-style:none;margin:0;padding:0}
+.nav-links a{display:inline-block;padding:14px 13px;text-decoration:none;color:var(--t-light-mut);font:500 .95rem/1 var(--body);background:linear-gradient(var(--accent-soft),var(--accent-soft)) no-repeat 13px calc(100% - 8px)/0 2px;transition:color .25s,background-size .3s}
+.nav-links a:hover{color:var(--t-light);background-size:calc(100% - 26px) 2px}
+.nav .btn{padding:13px 22px;min-height:46px;font-size:.95rem}
+.burger{display:none;width:48px;height:48px;border:1px solid var(--line-d);border-radius:12px;background:rgba(242,236,247,.03);cursor:pointer;position:relative}
+.burger span,.burger span::before,.burger span::after{position:absolute;width:20px;height:2px;background:var(--t-light);border-radius:2px;left:13px;top:23px;transition:transform .3s,opacity .3s;content:""}
+.burger span::before{left:0;top:-6px}
+.burger span::after{left:0;top:6px}
+.menu-open .burger span{background:transparent}
+.menu-open .burger span::before{transform:translateY(6px) rotate(45deg)}
+.menu-open .burger span::after{transform:translateY(-6px) rotate(-45deg)}
+.mmenu{position:fixed;inset:0;z-index:99;background:rgba(13,10,20,.96);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);display:flex;flex-direction:column;justify-content:center;padding:var(--pad);opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}
+.menu-open .mmenu{opacity:1;visibility:visible}
+.mmenu ul{list-style:none;margin:0 0 34px;padding:0}
+.mmenu a.mlink{display:block;padding:15px 4px;font:600 clamp(1.7rem,7vw,2.3rem)/1.15 var(--disp);color:var(--t-light);text-decoration:none;letter-spacing:-.02em}
+.mmenu a.mlink:hover{color:var(--accent-soft)}
+.mmenu .mtel{color:var(--t-light-mut);font-size:1.05rem;text-decoration:none;margin-top:18px;display:inline-block}
+.mmenu .mtel b{color:var(--accent-soft)}
+@media (max-width:920px){.nav-links,.nav .btn-g{display:none}.burger{display:block}}
+@media (max-width:560px){.nav .btn-p{display:none}}
+
+/* ============ HERO ============ */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;background:var(--ink);color:var(--t-light);overflow:clip}
+#gl{position:absolute;inset:0;width:100%;height:100%;z-index:1;opacity:0;transition:opacity 1.2s ease .15s}
+.fx #gl{opacity:1}
+.hero-atm{position:absolute;inset:0;z-index:0;pointer-events:none}
+.hero-base{position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 115%,#191030 0%,var(--ink) 62%)}
+.hero-blob{position:absolute;border-radius:50%;filter:blur(72px)}
+.hb1{width:52vw;height:52vw;max-width:760px;max-height:760px;right:-14vw;top:-16vw;background:radial-gradient(circle,rgba(240,40,143,.34),transparent 66%)}
+.hb2{width:40vw;height:40vw;max-width:560px;max-height:560px;left:-16vw;bottom:-18vw;background:radial-gradient(circle,rgba(122,108,245,.16),transparent 66%);opacity:.8}
+.fb-mesh{position:absolute;inset:0;background-image:var(--m-mesh-w);background-repeat:repeat;opacity:.05;-webkit-mask-image:radial-gradient(85% 100% at 78% 22%,#000 20%,transparent 66%);mask-image:radial-gradient(85% 100% at 78% 22%,#000 20%,transparent 66%)}
+.fb-shield{position:absolute;right:clamp(-60px,4vw,120px);top:50%;transform:translateY(-56%);width:clamp(260px,34vw,460px);opacity:.09}
+.fx .fb-mesh,.fx .fb-shield{display:none}.no-fx .fb-mesh{display:none}
+.hero-grain{position:absolute;inset:0;background-image:var(--grain);opacity:.13;mix-blend-mode:overlay}
+.hero-scrim{position:absolute;inset:0;z-index:2;background:radial-gradient(64% 80% at 24% 52%,rgba(13,10,20,.62),transparent 70%);pointer-events:none}
+.hero-in{position:relative;z-index:3;padding-top:110px;padding-bottom:120px}
+.hero-copy{max-width:660px}
+.hero-eye{display:inline-flex;align-items:center;gap:10px;font:600 .8rem/1.4 var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--t-light-mut);margin-bottom:26px;border:1px solid var(--line-d);border-radius:99px;padding:9px 18px 9px 12px;background:rgba(242,236,247,.03)}
+.hero-eye .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px rgba(240,40,143,.9);flex:none}
+.hero h1{font-size:var(--fs-900);font-weight:700;letter-spacing:-.03em;margin:0 0 26px}
+.hero h1 .l2{display:block;background:linear-gradient(96deg,var(--accent) 8%,var(--accent-soft) 60%,#FFD0E8 105%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hl-wrap{position:relative;display:inline-block}
+.hl-stroke{position:absolute;left:0;bottom:-.14em;width:100%;height:.22em;overflow:visible}
+.hl-stroke path{stroke:var(--accent);stroke-width:5;fill:none;stroke-linecap:round;stroke-dasharray:1000;stroke-dashoffset:1000;opacity:.85}
+.js .hl-on path{animation:draw .35s cubic-bezier(.6,0,.3,1) .2s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.hero-sub{font-size:var(--fs-600);color:var(--t-light-mut);max-width:64ch;margin-bottom:38px}
+.hero-sub b{color:var(--t-light);font-weight:600}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.hero-note{margin-top:30px;font-size:.9rem;color:var(--t-light-mut);opacity:.85}
+.hero-note b{color:var(--accent-soft);font-weight:600}
+.scroll-cue{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--t-light-mut);font:500 .72rem/1 var(--body);letter-spacing:.26em;text-transform:uppercase}
+.scroll-cue::after{content:"";width:2px;height:44px;background:linear-gradient(var(--accent),transparent);border-radius:2px;animation:cue 2.2s ease-in-out infinite}
+@keyframes cue{0%,100%{transform:scaleY(.4);transform-origin:top;opacity:.4}50%{transform:scaleY(1);opacity:1}}
+.live-hint{position:absolute;right:clamp(18px,3vw,44px);bottom:30px;z-index:3;margin:0;font:500 .78rem/1.5 var(--body);color:var(--t-light-mut);opacity:0;transition:opacity .8s ease 1.6s;display:none}
+.fx .live-hint{opacity:.75;display:block}
+@media (max-width:820px){.live-hint{display:none!important}}
+
+/* ============ TRUST STRIP ============ */
+.trust{background:var(--ink-2);padding:0;position:relative}
+.trust::before{content:"";position:absolute;left:0;right:0;top:-110px;height:110px;background:linear-gradient(to top,var(--ink-2),transparent);pointer-events:none}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);position:relative;z-index:2}
+.trust-cell{padding:44px 34px;display:flex;gap:16px;align-items:flex-start}
+.trust-cell+.trust-cell{border-left:1px solid var(--line-d)}
+.trust-cell svg{flex:none;width:26px;height:26px;color:var(--accent-soft);margin-top:3px}
+.trust-cell h3{font-size:1.02rem;font-weight:600;margin:0 0 5px;letter-spacing:0}
+.trust-cell p{font-size:.92rem;line-height:1.6;margin:0;color:var(--t-light-mut)}
+@media (max-width:860px){.trust-grid{grid-template-columns:1fr}.trust-cell+.trust-cell{border-left:0;border-top:1px solid var(--line-d)}.trust-cell{padding:26px 6px}}
+
+/* ============ SERVICES ============ */
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.svc{background:#FCFAFC;border:1px solid var(--line-l);border-radius:var(--r-lg);padding:clamp(26px,3.4vw,38px);position:relative;overflow:clip;transition:transform .35s cubic-bezier(.2,.7,.3,1),box-shadow .35s,border-color .35s}
+.svc:hover{transform:translateY(-6px);border-color:rgba(168,14,99,.3);box-shadow:0 28px 52px -26px rgba(36,27,46,.3)}
+.svc .ico{width:54px;height:54px;border-radius:15px;background:rgba(240,40,143,.09);color:var(--accent-deep);display:grid;place-items:center;margin-bottom:20px}
+.svc .ico svg{width:28px;height:28px}
+.svc h3{font-size:var(--fs-700);font-weight:600;margin-bottom:10px}
+.svc p{font-size:.97rem;line-height:1.65;margin-bottom:14px}
+.svc .tag{display:inline-flex;align-items:center;gap:7px;font:600 .78rem/1 var(--body);color:var(--accent-deep);background:rgba(240,40,143,.07);border:1px solid rgba(168,14,99,.18);border-radius:99px;padding:7px 13px}
+.svc:nth-of-type(1){--acc:240,40,143}
+.svc:nth-of-type(2){--acc:122,108,245}
+.svc:nth-of-type(3){--acc:168,14,99}
+.svc:nth-of-type(4){--acc:255,124,194}
+.svc .ico{background:rgba(var(--acc,240,40,143),.10)}
+.svc .tag{border-color:rgba(var(--acc,168,14,99),.32);background:rgba(var(--acc,240,40,143),.07)}
+.svc:hover{border-color:rgba(var(--acc,168,14,99),.45)}
+.plan{grid-column:1/-1;display:grid;grid-template-columns:1.5fr auto;gap:30px;align-items:center;background:linear-gradient(128deg,#1D1230 0%,var(--ink) 58%,#230F26 100%);color:var(--t-light);border:1px solid rgba(240,40,143,.4);border-radius:var(--r-lg);padding:clamp(28px,4vw,46px);position:relative;overflow:clip}
+.plan p{color:var(--t-light-mut)}
+.plan .chip-hot{display:inline-flex;align-items:center;gap:8px;font:600 .76rem/1 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--accent-soft);margin-bottom:14px}
+.plan .chip-hot::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px rgba(240,40,143,.9)}
+.plan h3{background:linear-gradient(120deg,#FF7CC2,#F0288F 55%,#A80E63);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.plan .cap{font:600 .82rem/1 var(--body);color:var(--accent-soft);margin:-4px 0 14px;letter-spacing:.02em}
+.trust-badges{margin:30px 0 0;text-align:center;font-size:.82rem;letter-spacing:.04em;color:var(--t-light-mut);text-transform:uppercase}
+.trust-badges b{color:var(--t-light);font-weight:600;text-transform:none;letter-spacing:0}
+.trust-badges span{color:var(--accent-soft);font-weight:600;margin-right:6px}
+.plan h3{font-size:clamp(1.5rem,2.4vw,2.1rem);font-weight:700}
+.plan p{max-width:56ch;margin-bottom:0;font-size:1rem}
+.plan-cta{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.plan-cta .micro{font-size:.84rem;color:var(--t-light-mut);margin:0}
+.plan-shield{position:absolute;right:-34px;bottom:-58px;width:230px;opacity:.08;pointer-events:none}
+.plan-glow{position:absolute;width:420px;height:300px;right:-90px;top:-120px;border-radius:50%;background:rgba(240,40,143,.16);filter:blur(70px);pointer-events:none}
+.plan-furn{position:absolute;inset:0;pointer-events:none;overflow:clip}
+.orbit{position:absolute;right:-58px;bottom:-96px;width:306px;height:306px;border:1px solid rgba(240,40,143,.16);border-radius:50%}
+.orbit::after{content:"";position:absolute;inset:34px;border:1px solid rgba(255,124,194,.10);border-radius:50%}
+.godrays{position:absolute;right:-30px;bottom:-40px;width:280px;height:240px;background:conic-gradient(from 200deg at 60% 100%,transparent 0deg,rgba(240,40,143,.10) 12deg,transparent 24deg,rgba(240,40,143,.07) 36deg,transparent 50deg);filter:blur(3px);opacity:.7}
+.fchip{position:absolute;display:inline-flex;align-items:center;gap:6px;font:600 .68rem/1 var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--accent-soft);background:rgba(240,40,143,.07);border:1px solid rgba(240,40,143,.20);border-radius:99px;padding:6px 11px;white-space:nowrap}
+.fchip::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent-soft)}
+.fc1{right:190px;top:26px}.fc2{right:34px;top:88px}.fc3{right:150px;bottom:34px}
+@media(max-width:900px){.plan-furn{display:none}}
+@media (max-width:900px){.svc-grid{grid-template-columns:1fr}.plan{grid-template-columns:1fr}.plan-cta{align-items:stretch}}
+
+/* ============ PORTFOLIO ============ */
+.pf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.pf-card{display:block;text-decoration:none;color:var(--t-light);background:var(--ink-3);border:1px solid var(--line-d);border-radius:var(--r-lg);overflow:hidden;position:relative;transition:transform .35s cubic-bezier(.2,.7,.3,1),box-shadow .35s,border-color .35s}
+.pf-card:hover{border-color:rgba(255,124,194,.42);box-shadow:0 30px 60px -28px rgba(240,40,143,.28);transform:translateY(-6px)}
+.pf-media{aspect-ratio:16/10;overflow:hidden;position:relative;background:#241B2E}
+.pf-media img{width:100%;height:100%;object-fit:cover;object-position:top;scale:1.12;transition:scale .6s cubic-bezier(.2,.7,.3,1)}
+.pf-card:hover .pf-media img{scale:1.17}
+.pf-media::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(13,10,20,.42),transparent 46%)}
+.badge{position:absolute;top:14px;left:14px;z-index:2;display:inline-flex;align-items:center;gap:7px;font:700 .72rem/1 var(--body);letter-spacing:.12em;text-transform:uppercase;border-radius:99px;padding:8px 13px}
+.badge-live{background:var(--accent);color:var(--ink)}
+.badge-live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ink);animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.badge-demo{background:rgba(13,10,20,.72);border:1px solid var(--line-d);color:var(--t-light-mut);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.pf-body{padding:24px 26px 28px}
+.pf-body h3{font-size:1.3rem;font-weight:600;margin-bottom:8px}
+.pf-body p{font-size:.94rem;line-height:1.6;margin-bottom:16px}
+.pf-body .pf-out{font-size:.86rem;line-height:1.55;color:var(--t-light-mut);margin:-4px 0 16px}
+.pf-body .pf-out b{color:var(--accent-soft);font-weight:600}
+.pf-link{font:600 .92rem/1 var(--body);color:var(--accent-soft);display:inline-flex;align-items:center;gap:7px}
+.pf-link svg{transition:transform .3s}
+.pf-card:hover .pf-link svg{transform:translate(3px,-2px)}
+.pf-more{margin-top:44px;text-align:center;font-size:1.05rem;color:var(--t-light-mut)}
+@media (max-width:980px){.pf-grid{grid-template-columns:1fr;max-width:560px;margin-inline:auto}}
+
+/* ============ DIFFERENCE ============ */
+.diff-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(36px,5vw,72px);align-items:center}
+.chiprow{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.chip{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line-l);border-radius:99px;padding:10px 17px;font:600 .86rem/1 var(--body);background:#FCFAFC;color:var(--t-dark)}
+.chip svg{width:15px;height:15px;color:var(--accent-deep);flex:none}
+.chart-card{background:#FCFAFC;border:1px solid var(--line-l);border-radius:var(--r-lg);padding:clamp(18px,2.6vw,30px);box-shadow:0 34px 64px -38px rgba(36,27,46,.4);position:relative}
+.chart-card figcaption{font:500 .82rem/1.5 var(--body);color:var(--t-dark-mut);margin-top:12px;display:flex;gap:18px;flex-wrap:wrap}
+.chart-card figcaption b{color:var(--accent-deep)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:26px}
+.stat b{display:block;font-family:var(--disp);font-size:clamp(1.9rem,3.6vw,2.7rem);line-height:1;color:var(--accent-deep);letter-spacing:-.02em}
+.stat span{display:block;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--t-dark-mut);margin-top:6px}
+@media(max-width:620px){.stats{grid-template-columns:1fr;gap:14px}}
+.chart{width:100%;height:auto;display:block}
+.chart .p-care{stroke-dasharray:1000;stroke-dashoffset:1000;transition:stroke-dashoffset 1.7s cubic-bezier(.4,0,.3,1) .25s}
+.chart .p-drift{stroke-dasharray:1000;stroke-dashoffset:1000;transition:stroke-dashoffset 1.7s cubic-bezier(.4,0,.3,1) .55s}
+.drawn .p-care,.drawn .p-drift{stroke-dashoffset:0}
+.chart .dots circle{opacity:0;transition:opacity .45s ease;transition-delay:calc(var(--i)*.09s + 1.15s)}
+.drawn .dots circle{opacity:1}
+.chart .warn{opacity:0;transition:opacity .6s ease 1.7s}
+.drawn .warn{opacity:1}
+.reduce .chart .p-care,.reduce .chart .p-drift{stroke-dashoffset:0;transition:none}
+.reduce .chart .dots circle,.reduce .chart .warn{opacity:1;transition:none}
+@media (max-width:920px){.diff-grid{grid-template-columns:1fr}}
+
+/* ============ PROCESS ============ */
+.steps{position:relative;max-width:820px;margin-top:clamp(30px,4vw,50px)}
+.steps::before{content:"";position:absolute;left:27px;top:20px;bottom:30px;width:2px;background:var(--line-d)}
+.rail{position:absolute;left:27px;top:20px;width:2px;height:0;max-height:calc(100% - 50px);background:linear-gradient(var(--accent),var(--accent-soft));box-shadow:0 0 16px rgba(240,40,143,.55);border-radius:2px}
+.step{display:grid;grid-template-columns:56px 1fr;gap:clamp(20px,3vw,34px);padding:clamp(22px,3vw,34px) 0;position:relative}
+.step .num{width:56px;height:56px;border-radius:50%;border:1px solid var(--line-d);display:grid;place-items:center;font:700 1.02rem var(--disp);color:var(--t-light-mut);background:var(--ink);position:relative;z-index:2;transition:background .5s,color .5s,border-color .5s,box-shadow .5s}
+.step h3{font-size:var(--fs-700);font-weight:600;margin-bottom:8px}
+.step p{max-width:58ch;margin:0;font-size:1rem}
+.js-seq .step{opacity:.38;transition:opacity .55s ease}
+.js-seq .step.lit{opacity:1}
+.step.lit .num,.steps:not(.js-seq) .step .num{background:var(--accent);color:var(--ink);border-color:var(--accent);box-shadow:0 0 26px rgba(240,40,143,.45)}
+.step .forever{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font:600 .84rem/1.4 var(--body);color:var(--accent-soft);background:rgba(240,40,143,.08);border:1px solid rgba(255,124,194,.28);border-radius:99px;padding:9px 15px}
+
+/* ============ ABOUT + CARE LOG ============ */
+.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(36px,5vw,76px);align-items:center}
+.about-cta{display:flex;gap:22px;align-items:center;flex-wrap:wrap;margin-top:28px}
+.carelog{background:#FCFAFC;border:1px solid var(--line-l);border-radius:var(--r-lg);box-shadow:0 34px 68px -36px rgba(36,27,46,.42);overflow:clip}
+.carelog header{padding:18px 26px;border-bottom:1px solid var(--line-l);display:flex;justify-content:space-between;align-items:center;gap:12px}
+.carelog header b{font:600 .95rem/1.3 var(--body);color:var(--t-dark)}
+.carelog header .when{font:600 .72rem/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--accent-deep);background:rgba(240,40,143,.08);border-radius:99px;padding:7px 12px;white-space:nowrap}
+.cl-row{display:flex;gap:15px;padding:16px 26px;border-bottom:1px dashed var(--line-l);align-items:flex-start;opacity:0;transform:translateX(14px);transition:opacity .5s ease,transform .5s ease;transition-delay:calc(var(--i)*.14s + .15s)}
+.drawn .cl-row{opacity:1;transform:none}
+.reduce .cl-row{opacity:1;transform:none;transition:none}
+.cl-row .ck{flex:none;width:24px;height:24px;border-radius:50%;background:rgba(240,40,143,.1);color:var(--accent-deep);display:grid;place-items:center;margin-top:2px}
+.cl-row .ck svg{width:13px;height:13px}
+.cl-row b{display:block;font:600 .93rem/1.4 var(--body);color:var(--t-dark)}
+.cl-row span{font-size:.86rem;color:var(--t-dark-mut);line-height:1.5}
+.carelog footer{padding:16px 26px 20px;font:500 .88rem/1.55 var(--body);color:var(--t-dark-mut);font-style:italic}
+@media (max-width:920px){.about-grid{grid-template-columns:1fr}}
+
+/* ============ TESTIMONIALS ============ */
+.tst-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.tst{border:1px solid var(--line-l);border-radius:var(--r-lg);padding:clamp(26px,3vw,36px);background:#FCFAFC;position:relative;display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.2,.7,.3,1),box-shadow .35s,border-color .35s}
+.tst:hover{transform:translateY(-3px);box-shadow:0 26px 50px -34px rgba(36,27,46,.38);border-color:rgba(168,14,99,.32)}
+.cs-vt{display:inline-block;font:600 .76rem/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--accent-deep);margin:0 0 12px}
+.cs-line{font-family:var(--disp);font-size:1.1rem;line-height:1.38;color:var(--t-dark);margin:0 0 14px;letter-spacing:-.01em}
+.cs-mtr{list-style:none;margin:0 0 18px;padding:0;display:grid;gap:7px}
+.cs-mtr li{font-size:.9rem;color:var(--t-dark-mut);display:flex;gap:8px;align-items:baseline}
+.cs-mtr b{color:var(--accent-deep);font-weight:700}
+.cs .pf-link{margin-top:auto;color:var(--accent-deep)}
+.tst .mark{font-family:var(--disp);font-size:2.6rem;line-height:1;color:var(--accent);opacity:.5;display:block;margin-bottom:6px}
+.tst .q{font-family:var(--disp);font-size:1.28rem;font-weight:500;color:var(--t-dark);letter-spacing:-.01em;margin-bottom:14px;text-wrap:balance}
+.tst .meta{font-size:.88rem;color:var(--t-dark-mut);margin:0}
+.tst .meta a{color:var(--accent-deep);font-weight:600;text-decoration:none}
+.tst .meta a:hover{text-decoration:underline}
+.tst .slot{position:absolute;top:-13px;left:22px;font:700 .68rem/1 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--accent-deep);background:var(--paper);border:1px solid rgba(168,14,99,.3);border-radius:99px;padding:7px 12px}
+@media (max-width:860px){.tst-grid{grid-template-columns:1fr}}
+
+/* ============ CONTACT ============ */
+.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,76px);align-items:start}
+.bigtel{display:inline-block;font:700 clamp(1.8rem,4.2vw,2.9rem)/1.15 var(--disp);letter-spacing:-.02em;color:#fff;text-decoration:none;margin:6px 0 8px;background:linear-gradient(var(--accent-soft),var(--accent-soft)) no-repeat 0 100%/0 3px;transition:background-size .4s ease}
+.bigtel:hover{background-size:100% 3px}
+.ct-meta{font-size:.9rem;color:var(--t-light-mut)}
+.ct-lines{margin:26px 0 0;padding:0;list-style:none;display:grid;gap:12px}
+.ct-lines li{display:flex;gap:11px;align-items:flex-start;font-size:.97rem;color:var(--t-light-mut)}
+.ct-lines svg{flex:none;width:18px;height:18px;color:var(--accent-soft);margin-top:4px}
+.fpanel{position:relative;background:rgba(242,236,247,.045);border:1px solid var(--line-d);border-radius:var(--r-lg);padding:clamp(26px,3.4vw,40px);-webkit-backdrop-filter:blur(12px) saturate(1.2);backdrop-filter:blur(12px) saturate(1.2)}
+.fld{margin-bottom:18px}
+.fld label{display:block;font:600 .89rem/1 var(--body);margin-bottom:9px;color:var(--t-light)}
+.fld input,.fld textarea{width:100%;background:rgba(13,10,20,.55);border:1px solid var(--line-d);border-radius:12px;padding:14px 16px;color:var(--t-light);font:400 1rem/1.5 var(--body);min-height:52px;transition:border-color .25s,box-shadow .25s}
+.fld textarea{min-height:120px;resize:vertical}
+.fld input::placeholder,.fld textarea::placeholder{color:rgba(183,172,198,.55)}
+.fld input:focus,.fld textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(240,40,143,.16),0 0 24px -6px rgba(240,40,143,.5)}
+.fsub{width:100%;margin-top:4px}
+.fmicro{font-size:.82rem;color:var(--t-light-mut);text-align:center;margin:14px 0 0}
+#form-done{text-align:center;padding:26px 6px}
+#form-done .big-ck{width:76px;height:76px;margin:0 auto 20px;border-radius:50%;background:rgba(240,40,143,.12);border:1px solid rgba(255,124,194,.4);display:grid;place-items:center;color:var(--accent-soft)}
+#form-done .big-ck svg{width:34px;height:34px}
+#form-done .big-ck path{stroke-dasharray:60;stroke-dashoffset:60;animation:draw .7s ease .25s forwards}
+#form-done h3{font-size:1.6rem}
+#form-done p{font-size:.98rem}
+#form-done a{color:var(--accent-soft);font-weight:600}
+.ferr{margin:.6em 0 0;color:var(--accent);font-size:.92rem}
+.sc-row{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,4vw,56px);align-items:center}
+.sc-form-wrap{position:relative}
+.sc-input{width:100%;background:#FCFAFC;border:1px solid var(--line-l);border-radius:14px;padding:14px 16px;color:var(--t-dark);font:400 1rem/1.5 var(--body);min-height:52px;margin-bottom:12px;transition:border-color .25s,box-shadow .25s}
+.sc-input::placeholder{color:var(--t-dark-mut);opacity:.7}
+.sc-input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(240,40,143,.16)}
+.sc-form .btn{width:100%;margin-top:2px}
+#sc-done{text-align:center}
+#sc-done .big-ck{width:76px;height:76px;margin:0 auto 20px;border-radius:50%;background:rgba(240,40,143,.12);border:1px solid rgba(255,124,194,.4);display:grid;place-items:center;color:var(--accent-soft)}
+#sc-done .big-ck svg{width:34px;height:34px}
+@media(max-width:820px){.sc-row{grid-template-columns:1fr}}
+.sec-cta{margin-top:clamp(34px,5vw,56px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px}
+.book-link{display:inline-block;margin:-2px 0 10px;color:var(--accent-soft);font-weight:600;font-size:.98rem;text-decoration:none;border-bottom:1px solid rgba(255,124,194,.4);padding-bottom:2px;transition:border-color .25s}
+.book-link:hover{border-color:var(--accent-soft)}
+.stickycta{position:fixed;left:0;right:0;bottom:0;z-index:90;background:rgba(13,10,20,.84);-webkit-backdrop-filter:blur(14px) saturate(1.2);backdrop-filter:blur(14px) saturate(1.2);border-top:1px solid rgba(240,40,143,.28);padding:12px 0;transform:translateY(120%);transition:transform .4s cubic-bezier(.2,.7,.3,1)}
+.stickycta:not([hidden]){transform:translateY(0)}
+.sc-sticky{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.sc-sticky strong{color:var(--t-light);font-family:var(--disp);font-size:1.05rem}
+.sc-actions{display:flex;gap:10px;flex-wrap:wrap}
+@media(max-width:860px){.stickycta{display:none!important}}
+@media (max-width:920px){.ct-grid{grid-template-columns:1fr}}
+
+/* ============ FOOTER ============ */
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.1fr;gap:clamp(28px,4vw,48px);padding:clamp(56px,8vw,92px) 0 46px}
+.foot-brand p{font-size:.93rem;line-height:1.65;margin:18px 0 0;max-width:34ch}
+#footer h3{font:600 .76rem/1 var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--t-light-mut);margin:6px 0 18px}
+#footer ul{list-style:none;margin:0;padding:0;display:grid;gap:11px}
+#footer li{font-size:.95rem;color:var(--t-light-mut)}
+#footer li a{color:var(--t-light);text-decoration:none;background:linear-gradient(var(--accent-soft),var(--accent-soft)) no-repeat 0 100%/0 1.5px;transition:background-size .3s,color .3s;padding-bottom:2px}
+#footer li a:hover{color:var(--accent-soft);background-size:100% 1.5px}
+.foot-bar{border-top:1px solid var(--line-d);padding:24px 0 32px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.foot-bar p{margin:0;font-size:.85rem;color:var(--t-light-mut)}
+.foot-bar span{color:var(--accent-soft)}
+@media (max-width:860px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.foot-grid{grid-template-columns:1fr}}
+
+/* ============ MOBILE STICKY BAR ============ */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:95;display:none;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(13,10,20,.92);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-top:1px solid var(--line-d);transform:translateY(105%);transition:transform .45s cubic-bezier(.2,.7,.3,1)}
+.mbar.show{transform:none}
+.mbar .btn{flex:1;padding:13px 10px;min-height:50px}
+@media (max-width:820px){.mbar{display:flex}}
+
+/* ============ REVEALS + MOTION ============ */
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .75s cubic-bezier(.2,.7,.3,1)}
+.js .rv.on{opacity:1;transform:none}
+.js .rv[data-d="1"]{transition-delay:.09s}
+.js .rv[data-d="2"]{transition-delay:.18s}
+.js .rv[data-d="3"]{transition-delay:.27s}
+.reduce .rv{opacity:1!important;transform:none!important;transition:none!important}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
+  .scroll-cue::after{animation:none;opacity:.5}
+  .hl-stroke path{stroke-dashoffset:0!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="WebCare Solutions — home">
+      <img class="brand-logo" src="assets/logo.webp" alt="WebCare" width="480" height="110" />
+      <span class="brand-sub">Solutions</span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#difference">Care</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-g" href="tel:+19795956330">(979) 595-6330</a>
+    <a class="btn btn-p mag" href="#contact">Start a project</a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="mmenu" aria-label="Open menu"><span></span></button>
+  </div>
+</header>
+
+<div class="mmenu" id="mmenu" hidden>
+  <nav aria-label="Mobile" class="wrap">
+    <ul>
+      <li><a class="mlink" href="#services">Services</a></li>
+      <li><a class="mlink" href="#work">Work</a></li>
+      <li><a class="mlink" href="#difference">The WebCare Difference</a></li>
+      <li><a class="mlink" href="#process">Process</a></li>
+      <li><a class="mlink" href="#contact">Start a project</a></li>
+    </ul>
+    <a class="btn btn-p" href="#contact">Start a project</a>
+    <a class="mtel" href="tel:+19795956330">Or call us — <b>(979) 595-6330</b></a>
+  </nav>
+</div>
+
+<main id="main">
+<!-- ============ HERO ============ -->
+<section class="hero" id="top" aria-label="WebCare Solutions — websites built, then looked after">
+  <div class="hero-atm" aria-hidden="true">
+    <div class="hero-base"></div>
+    <div class="hero-blob hb1"></div>
+    <div class="hero-blob hb2"></div>
+    <div class="fb-mesh"></div>
+    <svg class="fb-shield" viewBox="0 0 48 56" aria-hidden="true"><path d="M24 2 44 9v17c0 14-8.5 23.5-20 28C12.5 49.5 4 40 4 26V9Z" fill="none" stroke="#F2ECF7" stroke-width=".8"/><path d="M15 28l6.5 6.5L37 18" stroke="#F0288F" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="hero-grain"></div>
+  </div>
+  <!-- TRIPO3D SLOT: swap the particle shield for a GLB model — load via GLTFLoader, add to scene at the shield group's position -->
+  <!-- SEEDANCE SLOT: optional ambient background video — place a <video muted loop playsinline poster> behind .hero-in, keep it under 3 MB -->
+  <canvas id="gl" aria-hidden="true"></canvas>
+  <div class="hero-scrim" aria-hidden="true"></div>
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+    <p class="hero-eye"><span class="dot"></span>Web design + monthly care · Bryan–College Station, TX</p>
+    <h1>Most websites get launched.
+      <span class="l2 hl-wrap hl-on">Ours get looked after.<svg class="hl-stroke" viewBox="0 0 300 14" preserveAspectRatio="none" aria-hidden="true"><path d="M4 10 C 60 4, 150 3, 296 8" pathLength="1000"/></svg></span>
+    </h1>
+    <p class="hero-sub">We design premium websites for <b>churches and local businesses</b> across Bryan–College Station and Houston — then stay on as your web team. Updates, edits, backups, and a real person when you call.</p>
+    <div class="hero-cta">
+      <a class="btn btn-p mag" href="#contact">Start a project<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="btn btn-g mag" href="tel:+19795956330"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 2.5h2.6l1.2 3-1.7 1.3a10 10 0 0 0 4.1 4.1l1.3-1.7 3 1.2v2.6a1 1 0 0 1-1.1 1A12.4 12.4 0 0 1 2 3.6a1 1 0 0 1 1-1.1Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>Call (979) 595-6330</a>
+      <a class="btn btn-g mag" href="#site-check">Free 60-second check</a>
+    </div>
+    <p class="hero-note">Churches · Businesses · E-commerce — <b>no templates, no vanishing acts.</b></p>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true">Scroll</div>
+  <p class="live-hint" aria-hidden="true">This field is alive — move your pointer.</p>
+</section>
+
+<!-- ============ TRUST STRIP ============ -->
+<section class="trust dark" id="trust" aria-label="Why WebCare">
+  <div class="wrap">
+    <div class="trust-grid">
+      <div class="trust-cell rv">
+        <svg viewBox="0 0 26 26" fill="none" aria-hidden="true"><path d="M13 2.5 21.5 5.6v7.2c0 5.6-3.6 9.6-8.5 11.7-4.9-2.1-8.5-6.1-8.5-11.7V5.6Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m9.2 13.4 2.7 2.7 5.2-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><h3>Purpose-built, never templated</h3><p>Websites designed around your people — church congregations and local customers — not squeezed into a theme.</p></div>
+      </div>
+      <div class="trust-cell rv">
+        <svg viewBox="0 0 26 26" fill="none" aria-hidden="true"><path d="M13 23.5s8-6.6 8-12.5a8 8 0 1 0-16 0c0 5.9 8 12.5 8 12.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="13" cy="10.8" r="3" stroke="currentColor" stroke-width="1.6"/></svg>
+        <div><h3>Local &amp; reachable</h3><p>Based in Bryan–College Station, serving Houston too. Call (979) 595-6330 and a builder answers — not a ticket queue.</p></div>
+      </div>
+      <div class="trust-cell rv">
+        <svg viewBox="0 0 26 26" fill="none" aria-hidden="true"><path d="M3.5 12.5 13 4l9.5 8.5M6 10.5V22h14V10.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 22v-6h5v6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <div><h3>Build + care, one roof</h3><p>The team that designs your site is the same team that updates, backs up, and watches it every month after launch.</p></div>
+      </div>
+      <p class="trust-badges"><span>Built on</span> <b>WordPress</b> · <b>WooCommerce</b> · <b>Google Ads</b> · <b>Google Business Profile</b><!-- SLOT: add official partner-badge art only when each is genuinely earned --></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="sec light" id="services" aria-labelledby="services-h">
+  <div class="atm wash-l" aria-hidden="true"></div>
+  <div class="atm mot-shield-r" aria-hidden="true"></div>
+  <div class="atm grain-l" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="shead rv">
+      <p class="eye">What we do</p>
+      <h2 class="h2" id="services-h">One local team for the whole job.</h2>
+      <p class="lede">Design, build, host, promote — and then the part most agencies skip: keep it healthy, month after month.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc rv">
+        <div class="ico" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4.4M11.9 5h4.2"/><path d="M7 24V14.6L14 9l7 5.6V24"/><path d="M4 24h20"/><path d="M11.6 24v-4.3c0-1.5 1-2.6 2.4-2.6s2.4 1.1 2.4 2.6V24"/></svg></div>
+        <h3>Church community websites</h3>
+        <p>Welcoming, mobile-first church sites where first-time visitors feel expected — service times up front, ministries easy to find, and giving two taps away.</p>
+        <span class="tag"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M2.5 7l3 3 5-6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Turn first-time visitors into members</span>
+      </article>
+      <article class="svc rv" data-d="1">
+        <div class="ico" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 9.8h14.8l-1.3 12.4a1.9 1.9 0 0 1-1.9 1.7h-8.4a1.9 1.9 0 0 1-1.9-1.7Z"/><path d="M10.4 12.4V7.9a3.6 3.6 0 0 1 7.2 0v4.5"/></svg></div>
+        <h3>Business websites &amp; e-commerce</h3>
+        <p>From service companies to online stores: fast, professional sites that turn lookers into customers — with checkout that just works.</p>
+        <span class="tag"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M2.5 7l3 3 5-6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Turn browsers into buyers</span>
+      </article>
+      <article class="svc rv" data-d="1">
+        <div class="ico" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4.5" width="20" height="7.4" rx="2"/><rect x="4" y="16.1" width="20" height="7.4" rx="2"/><path d="M8.4 8.2h.01M8.4 19.8h.01"/><path d="M16 8.2h4M16 19.8h4"/></svg></div>
+        <h3>Hosting &amp; WordPress maintenance</h3>
+        <p>Managed hosting, plugin updates, and security patches — handled quietly in the background so your site stays fast and safe.</p>
+        <span class="tag"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M2.5 7l3 3 5-6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Stop losing leads to a slow site</span>
+      </article>
+      <article class="svc rv" data-d="2">
+        <div class="ico" aria-hidden="true"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7.4"/><path d="M17.5 17.5 24 24"/><path d="M8.6 14.2l2.4-2.7 1.8 1.5 2.7-3.2"/><path d="M13.1 9.4h2.4v2.4"/></svg></div>
+        <h3>SEO &amp; digital marketing</h3>
+        <p>Get found by the people already searching for you — local SEO plus Google Ads (PPC) campaigns tuned for Bryan–College Station and Houston.</p>
+        <span class="tag"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M2.5 7l3 3 5-6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Show up when locals search</span>
+      </article>
+      <article class="plan rv" aria-label="The WebCare Plan — our monthly care plan">
+        <div class="plan-glow" aria-hidden="true"></div>
+        <div class="plan-furn" aria-hidden="true">
+          <span class="godrays"></span>
+          <span class="orbit"></span>
+          <span class="fchip fc1">Updates</span>
+          <span class="fchip fc2">Backups</span>
+          <span class="fchip fc3">Edits</span>
+        </div>
+        <svg class="plan-shield" viewBox="0 0 48 56" aria-hidden="true"><path d="M24 2 44 9v17c0 14-8.5 23.5-20 28C12.5 49.5 4 40 4 26V9Z" fill="none" stroke="#F2ECF7" stroke-width="1"/><path d="M15 28l6.5 6.5L37 18" stroke="#F0288F" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div>
+          <p class="chip-hot">The heart of the studio</p>
+          <p class="cap">2 onboarding slots open this month</p><!-- SLOT: keep current/truthful -->
+          <h3>The WebCare Plan</h3>
+          <p>Every site we build is born into our monthly care plan: content updates and edits when you ask, automatic backups, security patches, and priority support. Your website never goes stale — and you never chase a developer again.</p>
+        </div>
+        <div class="plan-cta">
+          <a class="btn btn-p mag" href="#contact">Ask about the WebCare Plan</a>
+          <p class="micro">Every new-site quote is itemized — no surprise add-ons. The Plan is a flat monthly rate.<!-- SLOT: optionally add a starting-price anchor once you're ready to publish a number --></p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PORTFOLIO ============ -->
+<section class="sec dark cut-top" id="work" aria-labelledby="work-h">
+  <div class="atm wash-d" aria-hidden="true"></div>
+  <div class="atm mot-mesh-bl" aria-hidden="true"></div>
+  <div class="atm grain-d" aria-hidden="true"></div>
+  <div class="glow" style="width:520px;height:340px;left:50%;top:30px;transform:translateX(-50%);background:rgba(240,40,143,.15)" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="shead rv">
+      <p class="eye">Our work</p>
+      <h2 class="h2" id="work-h">Real builds, really cared for.</h2>
+      <p class="lede">Three are live right now — a church, a film-industry library, and a real-estate platform. The studio builds show what we'd do with your name on the door.</p>
+    </div>
+    <div class="pf-grid">
+      <a class="pf-card tilt rv" href="https://lov-cogic.com" target="_blank" rel="noopener">
+        <div class="pf-media">
+          <span class="badge badge-live">Live</span>
+          <img src="assets/lov_hero.webp" alt="Homepage of the Lily of the Valley COGIC website" width="1200" height="750" loading="lazy" />
+        </div>
+        <div class="pf-body">
+          <h3>Lily of the Valley COGIC</h3>
+          <p>Church community website with online giving — designed, launched, and under monthly WebCare right now.</p>
+          <p class="pf-out"><b>Outcome</b> · first-time visitors can give and plan a visit in two taps.<!-- SLOT: verify metric --></p>
+          <span class="pf-link">Visit the live site<svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M4 10 10 4M5.5 4H10v4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="pf-card tilt rv" data-d="1" href="#contact">
+        <div class="pf-media">
+          <span class="badge badge-demo">Studio demo</span>
+          <img src="assets/faithtemple_hero.webp" alt="Homepage concept for Faith Temple COGIC" width="1200" height="750" loading="lazy" />
+        </div>
+        <div class="pf-body">
+          <h3>Faith Temple COGIC</h3>
+          <p>A heritage gospel church concept — warm, reverent, and built to show what Sunday could feel like online.</p>
+          <p class="pf-out"><b>Concept</b> · a heritage gospel church that feels like Sunday, online.</p>
+          <span class="pf-link">Ask for a walkthrough<svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h9M7.5 3 11.5 7l-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="pf-card tilt rv" data-d="2" href="#contact">
+        <div class="pf-media">
+          <span class="badge badge-demo">Studio demo</span>
+          <img src="assets/kidz_hero.webp" alt="Homepage concept for Kingdom Kidz Youth Academy daycare" width="1200" height="750" loading="lazy" />
+        </div>
+        <div class="pf-body">
+          <h3>Kingdom Kidz Youth Academy</h3>
+          <p>A daycare concept parents instantly trust — bright, playful, and effortless to navigate on a phone.</p>
+          <p class="pf-out"><b>Concept</b> · a daycare parents trust in five seconds, phone-first.</p>
+          <span class="pf-link">Ask for a walkthrough<svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h9M7.5 3 11.5 7l-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="pf-card tilt rv" href="https://seedframes.com" target="_blank" rel="noopener">
+        <div class="pf-media">
+          <span class="badge badge-live">Live</span>
+          <img src="assets/seedframes.webp" alt="Homepage of seedframes, a cinematic reference library" width="1200" height="583" loading="lazy" />
+        </div>
+        <div class="pf-body">
+          <h3>seedframes</h3>
+          <p>A cinematic reference library for filmmakers — fast, searchable, and unapologetically dark-room.</p>
+          <p class="pf-out"><b>Outcome</b> · a dark-room library filmmakers can actually search, fast.<!-- SLOT: verify metric --></p>
+          <span class="pf-link">Visit the live site<svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M4 10 10 4M5.5 4H10v4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="pf-card tilt rv" data-d="1" href="https://deedslice.com" target="_blank" rel="noopener">
+        <div class="pf-media">
+          <span class="badge badge-live">Live</span>
+          <img src="assets/deedslice.webp" alt="Homepage of DeedSlice, digital tokenization infrastructure for real estate" width="1200" height="586" loading="lazy" />
+        </div>
+        <div class="pf-body">
+          <h3>DeedSlice</h3>
+          <p>Digital tokenization infrastructure for real estate — fintech clarity with investor-grade polish.</p>
+          <p class="pf-out"><b>Outcome</b> · complex fintech, made legible for investors.<!-- SLOT: verify metric --></p>
+          <span class="pf-link">Visit the live site<svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M4 10 10 4M5.5 4H10v4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="pf-card tilt rv" data-d="2" href="#contact">
+        <div class="pf-media">
+          <span class="badge badge-demo">Launching soon</span>
+          <img src="assets/mk_collective.webp" alt="Homepage of MK Collective, a College Station beauty studio — Sharp meets soft" width="1200" height="605" loading="lazy" />
+        </div>
+        <div class="pf-body">
+          <h3>MK Collective</h3>
+          <p>“Sharp meets soft.” — a College Station beauty studio with barber-sharp cuts and soft artistry, booking-first.</p>
+          <p class="pf-out"><b>Concept</b> · booking is the homepage — sharp meets soft.</p>
+          <span class="pf-link">Ask for a walkthrough<svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h9M7.5 3 11.5 7l-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+    </div>
+    <!-- SLOT: add new client cards here as they ship -->
+    <p class="pf-more rv">The next card is reserved for your project. <a class="tl" href="#contact">Claim it</a></p>
+  </div>
+</section>
+<!-- ============ THE WEBCARE DIFFERENCE ============ -->
+<section class="sec light" id="difference" aria-labelledby="diff-h">
+  <div class="atm wash-l" aria-hidden="true"></div>
+  <div class="atm mot-check-tl" aria-hidden="true"></div>
+  <div class="atm grain-l" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="diff-grid">
+      <div class="rv">
+        <p class="eye">Why “WebCare”</p>
+        <h2 class="h2" id="diff-h">The name is the promise.</h2>
+        <p>Most agencies hand over the keys and disappear. Twelve months later the plugins are outdated, the homepage still advertises last year’s event, and nobody answers the phone.</p>
+        <p>We built this studio around the opposite idea: <strong>a website is a living thing.</strong> So we build it well — then we look after it. That’s not an add-on at the bottom of an invoice. It’s the name on the door.</p>
+        <div class="chiprow">
+          <span class="chip"><svg viewBox="0 0 15 15" fill="none" aria-hidden="true"><path d="M2.8 8l3.4 3.4L12.4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Monthly updates</span>
+          <span class="chip"><svg viewBox="0 0 15 15" fill="none" aria-hidden="true"><path d="M2.8 8l3.4 3.4L12.4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Real backups</span>
+          <span class="chip"><svg viewBox="0 0 15 15" fill="none" aria-hidden="true"><path d="M2.8 8l3.4 3.4L12.4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Edits when you ask</span>
+          <span class="chip"><svg viewBox="0 0 15 15" fill="none" aria-hidden="true"><path d="M2.8 8l3.4 3.4L12.4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>A person who answers</span>
+        </div>
+      </div>
+      <figure class="chart-card draw-on-view rv" data-d="1" style="margin:0">
+        <svg class="chart" viewBox="0 0 680 340" role="img" aria-label="Chart comparing two websites over twelve months: a site on the WebCare Plan stays healthy and improves, while a launched-and-abandoned site slowly declines as plugins go stale and forms break.">
+          <g stroke="rgba(36,27,46,.09)" stroke-width="1"><path d="M50 90H650"/><path d="M50 170H650"/><path d="M50 250H650"/></g>
+          <path d="M50 280H650" stroke="rgba(36,27,46,.28)" stroke-width="1.4"/>
+          <g stroke="rgba(36,27,46,.22)" stroke-width="1.2">
+            <path d="M150 280v5"/><path d="M250 280v5"/><path d="M350 280v5"/><path d="M450 280v5"/><path d="M550 280v5"/>
+          </g>
+          <path class="p-drift" d="M50 168 C140 176 220 188 310 210 C400 232 560 260 650 268" fill="none" stroke="#9A8FA6" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="1000" pathLength="1000"/>
+          <path class="p-care" d="M50 168 C150 158 240 160 330 148 C420 136 560 130 650 118" fill="none" stroke="#F0288F" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="1000" pathLength="1000"/>
+          <g class="dots" fill="#F0288F">
+            <circle style="--i:0" cx="100" cy="163" r="3.4"/><circle style="--i:1" cx="150" cy="160" r="3.4"/><circle style="--i:2" cx="200" cy="158" r="3.4"/><circle style="--i:3" cx="250" cy="155" r="3.4"/><circle style="--i:4" cx="300" cy="151" r="3.4"/><circle style="--i:5" cx="350" cy="145" r="3.4"/><circle style="--i:6" cx="400" cy="139" r="3.4"/><circle style="--i:7" cx="450" cy="135" r="3.4"/><circle style="--i:8" cx="500" cy="131" r="3.4"/><circle style="--i:9" cx="550" cy="127" r="3.4"/><circle style="--i:10" cx="600" cy="122" r="3.4"/>
+          </g>
+          <g class="warn">
+            <g stroke="#5D5468" stroke-width="2" stroke-linecap="round"><path d="M306 206l8 8M314 206l-8 8"/></g>
+            <text x="310" y="196" text-anchor="middle" font-family="Inter,sans-serif" font-size="11.5" fill="#5D5468">plugins go stale</text>
+            <g stroke="#5D5468" stroke-width="2" stroke-linecap="round"><path d="M516 250l8 8M524 250l-8 8"/></g>
+            <text x="520" y="240" text-anchor="middle" font-family="Inter,sans-serif" font-size="11.5" fill="#5D5468">forms quietly break</text>
+          </g>
+          <text x="648" y="102" text-anchor="end" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="#A80E63">A WebCare site</text>
+          <text x="648" y="294" text-anchor="end" font-family="Inter,sans-serif" font-size="12" fill="#5D5468">Launched, then left alone</text>
+          <text x="50" y="310" font-family="Inter,sans-serif" font-size="12" fill="#5D5468">Launch day</text>
+          <text x="650" y="310" text-anchor="end" font-family="Inter,sans-serif" font-size="12" fill="#5D5468">12 months later</text>
+        </svg>
+        <figcaption>Twelve months after launch — the same website, two very different futures. <b>Each dot is a month of care.</b></figcaption>
+      </figure>
+      <div class="stats rv">
+        <div class="stat"><b>12</b><span>months of care, every build</span></div>
+        <div class="stat"><b>0</b><span>stale plugins, ever</span></div>
+        <div class="stat"><b>&lt;1&nbsp;day</b><span>typical edit turnaround</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SITE CHECK (lead magnet) ============ -->
+<section class="sec light alt" id="site-check" aria-labelledby="sc-h">
+  <div class="atm grain-l" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="sc-row rv">
+      <div class="sc-copy">
+        <p class="eye">Free · no sales call</p>
+        <h2 class="h2" id="sc-h">Not sure your site is working? Get a 60-second health check.</h2>
+        <p class="lede">We run speed, SEO, mobile, and security checks — then email you a plain-English score. No deck, no obligation.</p>
+      </div>
+      <div class="sc-form-wrap">
+        <div id="sc-panel">
+          <form class="sc-form" id="sc-form" name="site-check" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+            <input type="hidden" name="form-name" value="site-check" />
+            <p hidden aria-hidden="true"><label>Don't fill this out: <input name="bot-field" /></label></p>
+            <input class="sc-input" name="url" type="text" autocomplete="url" required placeholder="Your website URL" aria-label="Your website URL" />
+            <input class="sc-input" name="email" type="email" autocomplete="email" required placeholder="Where should we send the score?" aria-label="Email for the report" />
+            <button class="btn btn-p" type="submit">Run my free check</button>
+            <p class="fmicro">No spam. One email — your score, and how to reach us if you want help.</p>
+          </form>
+        </div>
+        <div id="sc-done" hidden tabindex="-1">
+          <div class="big-ck" aria-hidden="true"><svg viewBox="0 0 34 34" fill="none"><path d="M8 18l6.5 6.5L26 11" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>On it — your check is on the way.</h3>
+          <p>We’ll email your 60-second score within one business day. Want it faster? <a href="tel:+19795956330">Call (979) 595-6330</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="sec dark" id="process" aria-labelledby="process-h">
+  <div class="atm mesh-d" aria-hidden="true"></div>
+  <div class="atm mot-shield-w" aria-hidden="true"></div>
+  <div class="atm grain-d" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="shead rv">
+      <p class="eye">How it works</p>
+      <h2 class="h2" id="process-h">Four steps. The last one never ends.</h2>
+      <p class="lede">No mystery, no disappearing act — this is exactly how a project runs.</p>
+    </div>
+    <div class="steps" id="steps">
+      <div class="rail" id="rail" aria-hidden="true"></div>
+      <div class="step rv">
+        <div class="num" aria-hidden="true">01</div>
+        <div><h3>Scout</h3><p>A real conversation about your church or business — what you have, what you need, and what’s quietly costing you visitors.</p></div>
+      </div>
+      <div class="step rv">
+        <div class="num" aria-hidden="true">02</div>
+        <div><h3>Concept</h3><p>You get a design direction that actually fits you — your colors, your voice, your people. Never a template with your name pasted in.</p></div>
+      </div>
+      <div class="step rv">
+        <div class="num" aria-hidden="true">03</div>
+        <div><h3>Build</h3><p>Fast, mobile-first, and accessible. We walk you through every page before launch day — no surprises, no jargon.</p></div>
+      </div>
+      <div class="step rv">
+        <div class="num" aria-hidden="true">04</div>
+        <div><h3>Care</h3><p>Launch isn’t goodbye — it’s the start of the WebCare Plan. Updates, edits, backups, and support from the same people who built it.</p>
+        <span class="forever"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1.5a5.5 5.5 0 1 1-5.2 3.8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M1.5 1.8v3.6h3.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>This step repeats every month. That’s the point.</span></div>
+      </div>
+    </div>
+    <div class="sec-cta rv">
+      <a class="btn btn-p mag" href="#contact">Book a free 20-minute Scout call</a>
+      <p class="fmicro">No deck, no obligation — just a real conversation about your site.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="sec light alt" id="about" aria-labelledby="about-h">
+  <div class="r-feather" aria-hidden="true"></div>
+  <div class="atm wash-l" aria-hidden="true"></div>
+  <div class="atm mottle" aria-hidden="true"></div>
+  <div class="atm mot-mesh-l" aria-hidden="true"></div>
+  <div class="atm grain-l" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="rv">
+        <p class="eye">Who we are</p>
+        <h2 class="h2" id="about-h">Local, faith-friendly, and picky about the details.</h2>
+        <p>WebCare Solutions is a web studio in Bryan–College Station — the heart of Aggieland. We build for the churches and small businesses that hold towns like ours together, from here down the road to Houston.</p>
+        <p>We’re as comfortable in a sanctuary as in a storefront: online giving and ministry pages one day, product catalogs and Google Ads the next. And when you call, you get the person who actually builds your site — not a ticket queue.</p>
+        <div class="about-cta">
+          <a class="btn btn-p mag" href="#contact">Start a project</a>
+          <a class="tl" href="tel:+19795956330">Or call (979) 595-6330</a>
+        </div>
+      </div>
+      <div class="carelog draw-on-view rv" data-d="1" aria-label="Example of a month on the WebCare Plan">
+        <header>
+          <b>The WebCare Plan — a month in the life</b>
+          <span class="when">Every month</span>
+        </header>
+        <div class="cl-row" style="--i:0">
+          <span class="ck" aria-hidden="true"><svg viewBox="0 0 13 13" fill="none"><path d="M2.5 7l3 3 5-6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div><b>Backups</b><span>Ran automatically, stored safely off-site.</span></div>
+        </div>
+        <div class="cl-row" style="--i:1">
+          <span class="ck" aria-hidden="true"><svg viewBox="0 0 13 13" fill="none"><path d="M2.5 7l3 3 5-6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div><b>WordPress &amp; plugins</b><span>Updated and security-patched, quietly.</span></div>
+        </div>
+        <div class="cl-row" style="--i:2">
+          <span class="ck" aria-hidden="true"><svg viewBox="0 0 13 13" fill="none"><path d="M2.5 7l3 3 5-6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div><b>Content edits</b><span>“New service-time banner, please” — shipped the same week.</span></div>
+        </div>
+        <div class="cl-row" style="--i:3;border-bottom:none">
+          <span class="ck" aria-hidden="true"><svg viewBox="0 0 13 13" fill="none"><path d="M2.5 7l3 3 5-6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div><b>Watchful eyes</b><span>Uptime, forms, and giving links checked by a human.</span></div>
+        </div>
+        <footer>It’s the quiet work that keeps a website alive. We love this part.</footer>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="sec light" id="words" aria-labelledby="words-h" style="padding-top:clamp(64px,8vw,104px)">
+  <div class="atm grain-l" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="shead rv">
+      <p class="eye">Shipped work</p>
+      <h2 class="h2" id="words-h">Real builds, really shipped.</h2>
+      <p class="lede">We don’t publish invented praise. These are live sites — and the outcomes we can stand behind. References on request.</p>
+    </div>
+    <div class="tst-grid">
+      <article class="tst rv cs">
+        <span class="cs-vt">Church</span>
+        <p class="cs-line">Lily of the Valley COGIC — online giving and sermon streaming, live from launch.</p>
+        <ul class="cs-mtr">
+          <li><b>Live</b> · lov-cogic.com</li>
+          <li><!-- SLOT: verify with client --> Giving sign-ups tracked from week one</li>
+        </ul>
+        <a class="pf-link" href="https://lov-cogic.com" target="_blank" rel="noopener">Visit the live site</a>
+      </article>
+      <article class="tst rv cs" data-d="1">
+        <span class="cs-vt">Creative studio</span>
+        <p class="cs-line">seedframes — a cinematic portfolio built to load fast and book work.</p>
+        <ul class="cs-mtr">
+          <li><b>Live</b> · seedframes.com</li>
+          <li><!-- SLOT: verify with client --> Mobile load under two seconds</li>
+        </ul>
+        <a class="pf-link" href="https://seedframes.com" target="_blank" rel="noopener">Visit the live site</a>
+      </article>
+      <article class="tst rv cs">
+        <span class="cs-vt">Fintech</span>
+        <p class="cs-line">DeedSlice — investor-grade clarity for a complex product, built clean.</p>
+        <ul class="cs-mtr">
+          <li><b>Live</b> · deedslice.com</li>
+          <li><!-- SLOT: verify with client --> Compliant, fast, and easy to update</li>
+        </ul>
+        <a class="pf-link" href="https://deedslice.com" target="_blank" rel="noopener">Visit the live site</a>
+      </article>
+      <article class="tst rv cs founder" data-d="1">
+        <span class="cs-vt">The studio</span>
+        <p class="cs-line">“I’m the builder who answers the phone — not a ticket queue.”</p>
+        <ul class="cs-mtr">
+          <li><b>Local</b> · Bryan–College Station, TX</li>
+          <li>Churches, businesses, nonprofits &amp; stores</li>
+        </ul>
+        <a class="pf-link" href="#contact">Start a project<svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h9M7.5 3 11.5 7l-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="sec dark cut-top" id="contact" aria-labelledby="contact-h">
+  <div class="atm vin-warm" aria-hidden="true"></div>
+  <div class="atm vin-edge" aria-hidden="true"></div>
+  <div class="atm grain-d" aria-hidden="true"></div>
+  <div class="glow" style="width:560px;height:460px;left:50%;top:50%;transform:translate(-50%,-50%);background:rgba(240,40,143,.16)" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="ct-grid">
+      <div class="rv">
+        <p class="eye">Start a project</p>
+        <h2 class="h2" id="contact-h">Tell us what you need. We’ll call you back.</h2>
+        <p>Three fields, thirty seconds. We read every message ourselves — replies go out in under 4 business hours, on average.</p>
+        <a class="bigtel" href="tel:+19795956330">(979) 595-6330</a>
+        <a class="book-link" href="tel:+19795956330">Prefer to talk it through? Call or text (979) 595-6330 →</a>
+        <p class="ct-meta">Call or text — you’ll talk to the person who builds your site.</p>
+        <ul class="ct-lines">
+          <li><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 16.5s6-4.8 6-9.2A6 6 0 1 0 3 7.3c0 4.4 6 9.2 6 9.2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="9" cy="7.5" r="2.1" stroke="currentColor" stroke-width="1.5"/></svg>Bryan–College Station, Texas — serving Houston too</li>
+          <li><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 1.8 15.5 4v5c0 4-2.6 6.8-6.5 8.4C5.1 15.8 2.5 13 2.5 9V4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="m6.3 9.2 1.9 1.9 3.6-4.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Churches, businesses, nonprofits &amp; online stores</li>
+          <li><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M2.5 9h13M9 2.2c-4.4 4.2-4.4 9.4 0 13.6M9 2.2c4.4 4.2 4.4 9.4 0 13.6" stroke="currentColor" stroke-width="1.5"/></svg>webcare.solutions</li>
+        </ul>
+      </div>
+      <div class="fpanel rv" data-d="1">
+        <div id="form-panel">
+          <form id="cform" name="webcare-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+            <input type="hidden" name="form-name" value="webcare-contact" />
+            <p hidden aria-hidden="true"><label>Don't fill this out: <input name="bot-field" /></label></p>
+            <div class="fld">
+              <label for="f-name">Your name</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required placeholder="Pastor Jones, Maria from the bakery…" />
+            </div>
+            <div class="fld">
+              <label for="f-contact">Email or phone</label>
+              <input id="f-contact" name="contact" type="text" autocomplete="email" required placeholder="you@church.org or (979) 555-0100" />
+            </div>
+            <div class="fld">
+              <label for="f-need">What do you need?</label>
+              <textarea id="f-need" name="need" required placeholder="A church website with online giving… an online store… someone to care for the site we already have…"></textarea>
+            </div>
+            <button class="btn btn-p fsub mag" type="submit">Send it our way</button>
+            <p class="fmicro">No spam, no pressure — just a real reply from a real person.</p>
+          </form>
+        </div>
+        <div id="form-done" hidden tabindex="-1">
+          <div class="big-ck" aria-hidden="true"><svg viewBox="0 0 34 34" fill="none"><path d="M8 18l6.5 6.5L26 11" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Got it — thank you.</h3>
+          <p>We read every message ourselves — expect a reply in under 4 business hours.<br />Want to skip the wait? Call <a href="tel:+19795956330">(979) 595-6330</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="dark" id="footer" style="background:var(--ink-2);position:relative;overflow:clip">
+  <div class="atm mot-check-w" aria-hidden="true"></div>
+  <div class="atm grain-d" aria-hidden="true"></div>
+  <div class="wrap" style="position:relative;z-index:2">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#top" aria-label="WebCare Solutions — back to top">
+          <img class="brand-logo" src="assets/logo.webp" alt="WebCare" width="480" height="110" />
+          <span class="brand-sub">Solutions</span>
+        </a>
+        <p>Websites built, then looked after. A web design + monthly care studio in Bryan–College Station, Texas — serving Houston too.</p>
+      </div>
+      <nav aria-label="Footer"><h3>Explore</h3>
+        <ul><li><a href="#services">Services</a></li><li><a href="#work">Our work</a></li><li><a href="#difference">The WebCare Difference</a></li><li><a href="#process">Process</a></li><li><a href="#contact">Start a project</a></li></ul>
+      </nav>
+      <div><h3>What we do</h3>
+        <ul><li>Church community websites</li><li>Business sites &amp; e-commerce</li><li>Hosting &amp; WordPress care</li><li>SEO &amp; Google Ads</li><li>The WebCare Plan</li></ul>
+      </div>
+      <div><h3>Talk to us</h3>
+        <ul>
+          <li><a href="tel:+19795956330">(979) 595-6330</a></li>
+          <li><a href="https://webcare.solutions" rel="noopener">webcare.solutions</a></li>
+          <li>Bryan–College Station, TX</li>
+          <li>Serving Houston &amp; beyond</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bar">
+      <p>© <span id="yr">2026</span> WebCare Solutions · Bryan–College Station, TX</p>
+      <p>Built with care. <span aria-hidden="true">Kept with care.</span></p>
+    </div>
+  </div>
+</footer>
+
+<!-- sticky desktop bar -->
+<aside class="stickycta" id="stickycta" hidden>
+  <div class="wrap">
+    <div class="sc-sticky">
+      <strong>Ready when you are.</strong>
+      <span class="sc-actions">
+        <a class="btn btn-p mag" href="#contact">Start a project</a>
+        <a class="btn btn-g" href="tel:+19795956330">(979) 595-6330</a>
+      </span>
+    </div>
+  </div>
+</aside>
+
+<!-- sticky mobile bar -->
+<div class="mbar" id="mbar" role="navigation" aria-label="Quick actions">
+  <a class="btn btn-g" href="tel:+19795956330">Call us</a>
+  <a class="btn btn-p" href="#contact">Start a project</a>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script>
+/* ============ CORE (no dependencies) ============ */
+(function(){
+"use strict";
+var d=document, de=d.documentElement;
+de.classList.add('js');
+var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(reduce)de.classList.add('reduce');
+
+/* year */
+var yr=d.getElementById('yr'); if(yr)yr.textContent=new Date().getFullYear();
+
+/* nav state */
+var nav=d.getElementById('nav'), hero=d.querySelector('.hero'), mbar=d.getElementById('mbar');
+var ticking=false;
+function onScroll(){
+  if(ticking)return; ticking=true;
+  requestAnimationFrame(function(){
+    var y=window.scrollY||0;
+    nav.classList.toggle('on',y>34);
+    if(mbar&&hero)mbar.classList.toggle('show',y>hero.offsetHeight*0.72);
+    ticking=false;
+  });
+}
+window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+/* mobile menu */
+var burger=d.getElementById('burger'), menu=d.getElementById('mmenu'), lastFocus=null;
+function setMenu(open){
+  de.classList.toggle('menu-open',open);
+  burger.setAttribute('aria-expanded',open?'true':'false');
+  burger.setAttribute('aria-label',open?'Close menu':'Open menu');
+  if(open){menu.hidden=false; lastFocus=d.activeElement; d.body.style.overflow='hidden';
+    requestAnimationFrame(function(){var f=menu.querySelector('a'); if(f)f.focus();});
+  }else{d.body.style.overflow='';
+    setTimeout(function(){if(!de.classList.contains('menu-open'))menu.hidden=true;},380);
+    if(lastFocus)lastFocus.focus();
+  }
+}
+if(burger&&menu){
+  burger.addEventListener('click',function(){setMenu(!de.classList.contains('menu-open'));});
+  menu.addEventListener('click',function(e){if(e.target.closest('a'))setMenu(false);});
+  d.addEventListener('keydown',function(e){if(e.key==='Escape'&&de.classList.contains('menu-open'))setMenu(false);});
+}
+
+/* reveals */
+var rvs=[].slice.call(d.querySelectorAll('.rv'));
+function showAll(){rvs.forEach(function(el){el.classList.add('on');});}
+if(reduce||!('IntersectionObserver' in window)){showAll();}
+else{
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('on');io.unobserve(en.target);}});
+  },{threshold:.14,rootMargin:'0px 0px -6% 0px'});
+  rvs.forEach(function(el){io.observe(el);});
+  setTimeout(showAll,4000); /* safety net */
+}
+
+/* chart draw + care-log when visible */
+if('IntersectionObserver' in window){
+  var dio=new IntersectionObserver(function(es){
+    es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('drawn');dio.unobserve(en.target);}});
+  },{threshold:.35});
+  [].slice.call(d.querySelectorAll('.draw-on-view')).forEach(function(el){dio.observe(el);});
+  setTimeout(function(){[].slice.call(d.querySelectorAll('.draw-on-view')).forEach(function(el){el.classList.add('drawn');});},4500);
+}else{[].slice.call(d.querySelectorAll('.draw-on-view')).forEach(function(el){el.classList.add('drawn');});}
+
+/* magnetic buttons (≤6px) */
+var fine=window.matchMedia&&matchMedia('(pointer: fine)').matches;
+if(fine&&!reduce){
+  [].slice.call(d.querySelectorAll('.mag')).forEach(function(b){
+    b.addEventListener('pointermove',function(e){
+      var r=b.getBoundingClientRect();
+      var x=(e.clientX-r.left-r.width/2)/(r.width/2), y=(e.clientY-r.top-r.height/2)/(r.height/2);
+      b.style.transform='translate('+(x*6).toFixed(1)+'px,'+(y*5).toFixed(1)+'px)';
+    });
+    b.addEventListener('pointerleave',function(){b.style.transform='';});
+  });
+}
+
+/* card tilt (≤3deg) */
+if(fine&&!reduce){
+  [].slice.call(d.querySelectorAll('.tilt')).forEach(function(c){
+    c.addEventListener('pointermove',function(e){
+      var r=c.getBoundingClientRect();
+      var x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+      c.style.transform='perspective(900px) rotateX('+(-y*3).toFixed(2)+'deg) rotateY('+(x*3).toFixed(2)+'deg) translateY(-6px)';
+    });
+    c.addEventListener('pointerleave',function(){c.style.transform='';});
+  });
+}
+
+/* contact form — Netlify Forms (AJAX success state; native POST still works on deploy) */
+function wireNetlifyForm(form,opts){
+  if(!form) return;
+  opts=opts||{};
+  var panelId=opts.panelId||'form-panel', doneId=opts.doneId||'form-done', nameId=opts.nameId||'f-name';
+  var btn=form.querySelector('button[type=submit]'), lbl=btn?btn.textContent:'';
+  function finish(first){
+    var panel=d.getElementById(panelId), done=d.getElementById(doneId);
+    var h=done?done.querySelector('h3'):null;
+    var txt=opts.doneText?opts.doneText(first):(first?('Got it — thank you, '+first+'.'):'Got it — thank you.'); if(h){h.textContent=txt;}
+    if(panel){panel.hidden=true;}
+    if(done){done.hidden=false; if(done.focus){done.focus();}}
+  }
+  function fail(){
+    if(btn){btn.disabled=false;btn.textContent=lbl;}
+    var note=form.querySelector('.ferr'); if(!note){note=d.createElement('p');note.className='ferr';form.appendChild(note);}
+    note.textContent="It didn't go through — please call (979) 595-6330, or try again.";
+  }
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!form.checkValidity()){form.reportValidity();return;}
+    var first=(d.getElementById(nameId)||{}).value; first=first?first.trim().split(/\s+/)[0]:'';
+    if(btn){btn.disabled=true;btn.textContent='Sending…';}
+    if(location.protocol==='file:'){ finish(first); return; } /* local dev: no backend */
+    var body=new URLSearchParams(new FormData(form));
+    fetch(form.action||location.href,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body})
+      .then(function(r){ if(!r.ok) throw new Error(''+r.status); finish(first); })
+      .catch(function(){ fail(); });
+  });
+}
+wireNetlifyForm(d.getElementById('cform'));
+wireNetlifyForm(d.getElementById('sc-form'),{panelId:'sc-panel',doneId:'sc-done',nameId:null,doneText:function(){return 'On it — your 60-second check is on the way.';}});
+/* desktop sticky CTA — appears once you scroll past the hero (skipped under reduced-motion) */
+(function(){var sc=d.getElementById('stickycta');if(!sc||reduce)return;var tick=function(){sc.hidden=window.scrollY<window.innerHeight*0.8;};tick();window.addEventListener('scroll',tick,{passive:true});window.addEventListener('resize',tick);})();
+})();
+</script>
+<script>
+/* ============ FX: three.js scene + GSAP scroll direction ============ */
+(function(){
+"use strict";
+var de=document.documentElement;
+var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function glOK(){
+  try{var c=document.createElement('canvas');
+    return !!(window.WebGLRenderingContext&&(c.getContext('webgl')||c.getContext('experimental-webgl')));
+  }catch(e){return false;}
+}
+
+/* All heavy init deferred until after first paint */
+if(document.readyState==='complete'){setTimeout(boot,60);}
+else{window.addEventListener('load',function(){setTimeout(boot,60);});}
+
+function boot(){
+  var hasGSAP=typeof gsap!=='undefined'&&typeof ScrollTrigger!=='undefined';
+  if(hasGSAP&&!reduce){try{gsap.registerPlugin(ScrollTrigger);}catch(e){hasGSAP=false;}}
+  var canvas=document.getElementById('gl');
+  if(reduce||typeof THREE==='undefined'||!glOK()||!canvas){
+    de.classList.add('no-fx');
+  }else{
+    try{initScene(canvas);de.classList.add('fx');}
+    catch(e){de.classList.add('no-fx');if(canvas)canvas.style.display='none';}
+  }
+  if(hasGSAP&&!reduce){try{initScroll();}catch(e){}}
+}
+
+/* ---------- THE LIVING FIELD: particle-mesh landscape + shield formation ---------- */
+function initScene(canvas){
+  var hero=document.querySelector('.hero');
+  var light=(window.innerWidth<760)||((navigator.deviceMemory||8)<4)||((navigator.hardwareConcurrency||8)<4);
+  var W=hero.clientWidth,H=hero.clientHeight;
+
+  var renderer=new THREE.WebGLRenderer({canvas:canvas,antialias:!light,alpha:true,powerPreference:'high-performance'});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2)); /* DPR capped at 2 */
+  renderer.setSize(W,H,false);
+
+  var scene=new THREE.Scene();
+  scene.fog=new THREE.FogExp2(0x0d0a14,0.05);
+  var cam=new THREE.PerspectiveCamera(58,W/H,0.1,80);
+  cam.position.set(0,0.7,11);
+
+  /* soft round particle sprite (kills the hard-square look) */
+  var dcv=document.createElement('canvas');dcv.width=dcv.height=64;
+  var dctx=dcv.getContext('2d');
+  var dg=dctx.createRadialGradient(32,32,0,32,32,30);
+  dg.addColorStop(0,'rgba(255,255,255,1)');dg.addColorStop(0.45,'rgba(255,255,255,.72)');dg.addColorStop(1,'rgba(255,255,255,0)');
+  dctx.fillStyle=dg;dctx.beginPath();dctx.arc(32,32,30,0,Math.PI*2);dctx.fill();
+  var dot=new THREE.CanvasTexture(dcv);
+
+  /* --- particle-mesh landscape (points + connecting lines share one buffer) --- */
+  var gx=light?64:126, gz=light?36:72, pw=56, pd=32;
+  var nv=(gx+1)*(gz+1);
+  var pos=new Float32Array(nv*3), col=new Float32Array(nv*3);
+  var xs=new Float32Array(nv), zs=new Float32Array(nv);
+  var i,j,k=0;
+  for(j=0;j<=gz;j++){for(i=0;i<=gx;i++){
+    var x=-pw/2+pw*i/gx, z=-pd/2+pd*j/gz;
+    xs[k]=x;zs[k]=z;
+    pos[k*3]=x;pos[k*3+1]=0;pos[k*3+2]=z;
+    if(Math.random()<0.085){col[k*3]=1;col[k*3+1]=0.22;col[k*3+2]=0.62;}
+    else{var v=0.4+Math.random()*0.42;col[k*3]=0.62*v;col[k*3+1]=0.57*v;col[k*3+2]=0.88*v;}
+    k++;
+  }}
+  var geo=new THREE.BufferGeometry();
+  var posAttr=new THREE.BufferAttribute(pos,3);
+  posAttr.setUsage&&posAttr.setUsage(THREE.DynamicDrawUsage);
+  geo.setAttribute('position',posAttr);
+  geo.setAttribute('color',new THREE.BufferAttribute(col,3));
+  var pts=new THREE.Points(geo,new THREE.PointsMaterial({size:light?0.16:0.12,map:dot,vertexColors:true,transparent:true,opacity:0.88,depthWrite:false,blending:THREE.AdditiveBlending,sizeAttenuation:true}));
+  var idx=[];
+  for(j=0;j<=gz;j++){for(i=0;i<gx;i++){var a=j*(gx+1)+i;idx.push(a,a+1);}}
+  for(j=0;j<gz;j++){for(i=0;i<=gx;i++){var b=j*(gx+1)+i;idx.push(b,b+gx+1);}}
+  var lgeo=new THREE.BufferGeometry();
+  lgeo.setAttribute('position',posAttr);
+  lgeo.setIndex(idx);
+  var lines=new THREE.LineSegments(lgeo,new THREE.LineBasicMaterial({color:0x7d55d8,transparent:true,opacity:0.08,blending:THREE.AdditiveBlending,depthWrite:false}));
+  var land=new THREE.Group();
+  land.add(pts);land.add(lines);
+  land.position.set(0,-3.3,0);
+  scene.add(land);
+
+  /* --- the shield: particles that converge into the WebCare mark --- */
+  var SN=light?400:760;
+  var S=2.5;
+  function jit(a){return (Math.random()-0.5)*(a||0.05);}
+  function cubic(P,t){var mt=1-t;
+    return [mt*mt*mt*P[0][0]+3*mt*mt*t*P[1][0]+3*mt*t*t*P[2][0]+t*t*t*P[3][0],
+            mt*mt*mt*P[0][1]+3*mt*mt*t*P[1][1]+3*mt*t*t*P[2][1]+t*t*t*P[3][1]];}
+  var segs=[
+    [[-0.86,0.80],[-0.30,0.90],[0.30,0.90],[0.86,0.80]],
+    [[0.86,0.80],[0.90,0.30],[0.78,-0.30],[0,-1.02]],
+    [[0,-1.02],[-0.78,-0.30],[-0.90,0.30],[-0.86,0.80]]
+  ];
+  var outN=Math.round(SN*0.6), ckN=SN-outN;
+  var tgt=new Float32Array(SN*3), sCol=new Float32Array(SN*3), w=0;
+  for(i=0;i<outN;i++){
+    var tt=(i/outN)*3, si=Math.min(2,Math.floor(tt)), lt=tt-si;
+    var pnt=cubic(segs[si],lt);
+    tgt[w*3]=(pnt[0]+jit())*S; tgt[w*3+1]=(pnt[1]+jit())*S; tgt[w*3+2]=jit(0.16);
+    if(Math.random()<0.2){sCol[w*3]=1;sCol[w*3+1]=0.85;sCol[w*3+2]=0.95;}
+    else{sCol[w*3]=1;sCol[w*3+1]=0.26;sCol[w*3+2]=0.63;}
+    w++;
+  }
+  var A=[-0.42,-0.03],B=[-0.09,-0.37],C=[0.50,0.33];
+  var l1=Math.hypot(B[0]-A[0],B[1]-A[1]), l2=Math.hypot(C[0]-B[0],C[1]-B[1]), lt2=l1+l2;
+  for(i=0;i<ckN;i++){
+    var u=(i/ckN)*lt2, px,py;
+    if(u<l1){var t1=u/l1;px=A[0]+(B[0]-A[0])*t1;py=A[1]+(B[1]-A[1])*t1;}
+    else{var t2=(u-l1)/l2;px=B[0]+(C[0]-B[0])*t2;py=B[1]+(C[1]-B[1])*t2;}
+    tgt[w*3]=(px+jit(0.07))*S; tgt[w*3+1]=(py+jit(0.07))*S; tgt[w*3+2]=jit(0.14);
+    sCol[w*3]=1;sCol[w*3+1]=0.88;sCol[w*3+2]=0.96;
+    w++;
+  }
+  var scat=new Float32Array(SN*3);
+  for(i=0;i<SN;i++){scat[i*3]=(Math.random()*2-1)*5.2;scat[i*3+1]=(Math.random()*2-1)*3.4;scat[i*3+2]=(Math.random()*2-1)*2.2;}
+  var sPos=new Float32Array(SN*3); sPos.set(scat);
+  var sGeo=new THREE.BufferGeometry();
+  var sAttr=new THREE.BufferAttribute(sPos,3);
+  sAttr.setUsage&&sAttr.setUsage(THREE.DynamicDrawUsage);
+  sGeo.setAttribute('position',sAttr);
+  sGeo.setAttribute('color',new THREE.BufferAttribute(sCol,3));
+  var sBase=light?0.17:0.14;
+  var sPts=new THREE.Points(sGeo,new THREE.PointsMaterial({size:sBase,map:dot,vertexColors:true,transparent:true,opacity:0.92,depthWrite:false,blending:THREE.AdditiveBlending}));
+  var shield=new THREE.Group();
+  shield.add(sPts);
+  scene.add(shield);
+
+  /* soft anchored glow behind the mark */
+  var gcv=document.createElement('canvas');gcv.width=gcv.height=256;
+  var g2=gcv.getContext('2d');
+  var grd=g2.createRadialGradient(128,128,8,128,128,128);
+  grd.addColorStop(0,'rgba(240,40,143,0.5)');grd.addColorStop(0.5,'rgba(240,40,143,0.14)');grd.addColorStop(1,'rgba(240,40,143,0)');
+  g2.fillStyle=grd;g2.fillRect(0,0,256,256);
+  var glowMat=new THREE.SpriteMaterial({map:new THREE.CanvasTexture(gcv),transparent:true,opacity:0.12,blending:THREE.AdditiveBlending,depthWrite:false});
+  var glow=new THREE.Sprite(glowMat);
+  glow.scale.set(7.5,7.5,1);glow.position.z=-0.5;
+  shield.add(glow);
+
+  /* ambient dust for depth */
+  var DN=light?110:240;
+  var dPos=new Float32Array(DN*3);
+  for(i=0;i<DN;i++){dPos[i*3]=(Math.random()*2-1)*26;dPos[i*3+1]=(Math.random()*2-1)*6+1;dPos[i*3+2]=-9+Math.random()*10;}
+  var dGeo=new THREE.BufferGeometry();dGeo.setAttribute('position',new THREE.BufferAttribute(dPos,3));
+  var dust=new THREE.Points(dGeo,new THREE.PointsMaterial({color:0xB7ACC6,size:0.08,map:dot,transparent:true,opacity:0.3,depthWrite:false,blending:THREE.AdditiveBlending}));
+  scene.add(dust);
+
+  function layout(){
+    W=hero.clientWidth;H=hero.clientHeight;
+    renderer.setSize(W,H,false);
+    cam.aspect=W/H;cam.updateProjectionMatrix();
+    if(W<760){shield.position.set(0,2.3,1);shield.scale.set(0.72,0.72,0.72);}
+    else{shield.position.set(3.05,1.15,1.2);shield.scale.set(1,1,1);}
+  }
+  layout();
+
+  /* state + interaction */
+  var st={ps:0,mx:0,my:0,cmx:0,cmy:0,form:0};
+  window.addEventListener('pointermove',function(e){
+    st.mx=(e.clientX/window.innerWidth-0.5)*2;
+    st.my=(e.clientY/window.innerHeight-0.5)*2;
+  },{passive:true});
+
+  function smooth(a,b,x){var u=Math.min(1,Math.max(0,(x-a)/(b-a)));return u*u*(3-2*u);}
+
+  var running=false,rafId=0,visible=true,tabVisible=!document.hidden,tAcc=0,lastNow=0;
+  function frame(now){
+    if(!running)return;
+    if(lastNow)tAcc+=Math.min(0.06,(now-lastNow)/1000);
+    lastNow=now;
+    var t=tAcc;
+    var hh=hero.offsetHeight||1;
+    var targetP=Math.min(1,Math.max(0,(window.scrollY||0)/hh));
+    st.ps+=(targetP-st.ps)*0.07;
+    var p=st.ps;
+    var idle=Math.min(0.26,Math.max(0,t-1.5)*0.055);      /* the mark gently suggests itself even before you scroll */
+    var formT=Math.max(idle,smooth(0.04,0.62,p));          /* …then scroll assembles it fully */
+    st.form+=(formT-st.form)*0.05;
+    var f=st.form;
+
+    var amp=0.62*(1+0.45*p);
+    var arr=posAttr.array;
+    for(var q=0;q<nv;q++){
+      var x=xs[q],z=zs[q];
+      arr[q*3+1]=amp*Math.sin(x*0.3+t*0.85)*Math.cos(z*0.34+t*0.62)+0.85*Math.sin((x+z)*0.13-t*0.42);
+    }
+    posAttr.needsUpdate=true;
+
+    var sa=sAttr.array, wob=1-f*0.72;
+    for(q=0;q<SN;q++){
+      var i3=q*3;
+      sa[i3]  =scat[i3]  +(tgt[i3]  -scat[i3])*f+Math.sin(t*1.1+q)*0.05*wob+Math.sin(t*0.7+q*1.7)*0.012;
+      sa[i3+1]=scat[i3+1]+(tgt[i3+1]-scat[i3+1])*f+Math.cos(t*0.9+q*2.1)*0.05*wob+Math.cos(t*0.6+q)*0.012;
+      sa[i3+2]=scat[i3+2]+(0-scat[i3+2])*f+Math.sin(t*0.8+q*0.9)*0.05*wob;
+    }
+    sAttr.needsUpdate=true;
+    glowMat.opacity=0.1+f*0.38;
+    sPts.material.size=sBase*(1+f*0.12);
+    shield.rotation.y=Math.sin(t*0.16)*0.05;
+    dust.rotation.y=t*0.008;
+
+    st.cmx+=(st.mx-st.cmx)*0.04; st.cmy+=(st.my-st.cmy)*0.04;
+    cam.position.x=st.cmx*1.25;
+    cam.position.y=0.7+1.35*p-st.cmy*0.55;
+    cam.position.z=11-3.1*p;
+    cam.lookAt(st.cmx*0.4,0.45+0.85*p,0);
+    lines.material.opacity=0.08+p*0.03;
+
+    renderer.render(scene,cam);
+    rafId=requestAnimationFrame(frame);
+  }
+  function start(){if(running||!visible||!tabVisible)return;running=true;lastNow=0;rafId=requestAnimationFrame(frame);}
+  function stop(){running=false;if(rafId){cancelAnimationFrame(rafId);rafId=0;}}
+
+  /* pause when offscreen or tab hidden */
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){
+      es.forEach(function(en){visible=en.isIntersecting;if(visible)start();else stop();});
+    },{rootMargin:'90px'}).observe(canvas);
+  }
+  document.addEventListener('visibilitychange',function(){
+    tabVisible=!document.hidden;
+    if(tabVisible)start();else stop();
+  });
+  var rto=0;
+  window.addEventListener('resize',function(){clearTimeout(rto);rto=setTimeout(layout,180);},{passive:true});
+  start();
+}
+
+/* ---------- scroll direction (GSAP ScrollTrigger — subtle scrubs, no hijack) ---------- */
+function initScroll(){
+  var hero=document.querySelector('.hero');
+  if(hero){
+    gsap.to('.hero-in',{yPercent:-9,autoAlpha:0.24,ease:'none',
+      scrollTrigger:{trigger:hero,start:'top top',end:'86% top',scrub:0.9}});
+    gsap.to('.scroll-cue',{autoAlpha:0,
+      scrollTrigger:{trigger:hero,start:'4% top',end:'16% top',scrub:true}});
+  }
+  /* portfolio: gentle parallax inside each card */
+  var imgs=document.querySelectorAll('.pf-media img');
+  for(var i=0;i<imgs.length;i++){(function(img){
+    gsap.fromTo(img,{yPercent:-5.5},{yPercent:5.5,ease:'none',
+      scrollTrigger:{trigger:img.closest('.pf-card'),start:'top bottom',end:'bottom top',scrub:1.1}});
+  })(imgs[i]);}
+  /* process: rail fills + steps light in sequence */
+  var steps=document.getElementById('steps');
+  if(steps){
+    steps.classList.add('js-seq');
+    var stepEls=[].slice.call(steps.querySelectorAll('.step'));
+    var rail=document.getElementById('rail');
+    ScrollTrigger.create({trigger:steps,start:'top 74%',end:'bottom 46%',scrub:0.7,
+      onUpdate:function(self){
+        var pr=self.progress;
+        if(rail)rail.style.height=(pr*100)+'%';
+        for(var s=0;s<stepEls.length;s++){stepEls[s].classList.toggle('lit',pr>=(s+0.35)/stepEls.length);}
+      }});
+  }
+}
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+# WebCare Solutions — static single-file site, no framework build.
+#
+# The repo root holds working files (BUILD-NOTES.md, docs/, _qa/) that must NOT
+# be public. So instead of publishing the root, we copy only the shippable files
+# into dist/ and publish that. Keeps the repo layout (and the QA harness) intact.
+#
+# Forms (webcare-contact, site-check) are Netlify Forms — detected from the HTML
+# at deploy time. After the first deploy, set an email notification in
+# Netlify → Forms → Settings, or submissions just pile up in the dashboard unseen.
+
+[build]
+  command = "mkdir -p dist && cp -r index.html 404.html robots.txt sitemap.xml _headers assets dist/"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"

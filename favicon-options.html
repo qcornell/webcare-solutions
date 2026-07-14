@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>WebCare Solutions — Favicon Lab</title>
+<style>
+  :root{
+    --ink:#0D0A14; --ink-2:#130F1E; --paper:#FBF8FB; --mag:#FF0288; --mag-deep:#C01068;
+    --t-l:#F2ECF7; --t-l-mut:#9A8FAE; --line:rgba(242,236,247,.10);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ink);color:var(--t-l);font-family:'Space Grotesk',Inter,system-ui,sans-serif;padding:40px 32px 56px;-webkit-font-smoothing:antialiased}
+  h1{font-size:30px;margin:0 0 6px;letter-spacing:-.02em}
+  .sub{color:var(--t-l-mut);font-size:15px;margin:0 0 30px;max-width:760px;line-height:1.6}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:1120px}
+  .card{background:var(--ink-2);border:1px solid var(--line);border-radius:18px;padding:24px 24px 26px}
+  .card.current{border-color:rgba(255,2,136,.35)}
+  .name{display:flex;align-items:center;gap:12px;margin-bottom:4px}
+  .name h2{font-size:19px;margin:0;letter-spacing:-.01em}
+  .tag{font:600 10px/1 'Space Grotesk';letter-spacing:.16em;text-transform:uppercase;padding:5px 9px;border-radius:999px;background:rgba(255,2,136,.14);color:#FF7CC2}
+  .tag.now{background:rgba(242,236,247,.10);color:var(--t-l-mut)}
+  .desc{color:var(--t-l-mut);font-size:13.5px;line-height:1.6;margin:0 0 18px;min-height:42px}
+  .row{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+  .lbl{font:600 10px/1 'Space Grotesk';letter-spacing:.15em;text-transform:uppercase;color:var(--t-l-mut);opacity:.8}
+  .tabbar{display:flex;align-items:flex-end;gap:0;padding:8px 8px 0;border-radius:10px 10px 0 0}
+  .tabbar.light{background:#D7D7DB}
+  .tabbar.dark{background:#202024}
+  .tab{display:flex;align-items:center;gap:7px;padding:8px 12px 8px 10px;border-radius:8px 8px 0 0;margin-left:4px;font-size:12px}
+  .light .tab{background:#F4F4F6;color:#3A3A3E}
+  .dark .tab{background:#3A3A40;color:#E2E2E8}
+  .tab img{display:block}
+  .tab .x{margin-left:8px;opacity:.45;font-size:11px}
+  .bigrow{display:flex;align-items:flex-end;gap:22px;margin-top:6px;padding:14px 0 4px;border-top:1px dashed var(--line)}
+  .big{display:flex;flex-direction:column;align-items:center;gap:8px}
+  .big .sz{font:600 10px/1 'Space Grotesk';letter-spacing:.12em;color:var(--t-l-mut)}
+  .chip{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:12px;color:#9A8FAE}
+  .chip b{color:#FF7CC2;font-weight:600}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;color:#bda6d8;background:rgba(122,108,245,.10);padding:1px 6px;border-radius:5px}
+  .legend{max-width:1120px;margin:26px 0 0;color:var(--t-l-mut);font-size:13px;line-height:1.7}
+  .legend b{color:var(--t-l)}
+  .pick{text-align:center;margin:34px 0 0;color:var(--t-l-mut);font-size:13px}
+</style>
+</head>
+<body>
+  <h1>WebCare Solutions · Favicon Lab</h1>
+  <p class="sub">Four directions, each rendered as real browser tabs (light + dark) at 16/32px, plus 48/64/180 for home-screen &amp; apple-touch. The current favicon is shown first for comparison — note the pointed-top “kite” silhouette and the dark (ink) check that doesn’t match your white-check logo.</p>
+
+  <div class="grid" id="grid"></div>
+
+  <p class="legend">
+    <b>What changed vs. the current one:</b> a flat (slightly arched) top instead of a center apex — that’s what makes a shield read “sturdy” rather than “skinny” at 16px — plus a <b>white</b> check matching your logo, and on two of the three, the logo’s <b>inner white border</b>. All three hold up down to 16px on both light and dark tabs; V3 adds a crafted gradient + edge highlight for a premium feel that matches the dark, glowing hero.
+  </p>
+  <p class="pick">Tell me <b>A (Heritage)</b>, <b>B (Bold)</b>, or <b>C (Premium)</b> — or “mix A’s border into C,” etc. I’ll finalize the chosen one into the site (16/32/48 SVG + 180/512 PNG) once the full design is approved.</p>
+
+<script>
+// ---------- SVG marks (square 64 canvas for crisp favicon scaling) ----------
+const SHIELD = "M10 11 C10 7 13 6 16 6 L48 6 C51 6 54 7 54 11 L54 30 C54 43.5 45.5 53.5 32 58.5 C18.5 53.5 10 43.5 10 30 Z";
+const SHIELD_WIDE = "M8 12 C8 7 12 6 16 6 L48 6 C52 6 56 7 56 12 L56 30 C56 44 47 54 32 59 C17 54 8 44 8 30 Z";
+const CHECK = "M20 33 L29 41.5 L45 23";
+
+// CURRENT (before) — faithful reproduction of the live favicon
+const CURRENT = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 56"><path d="M24 2 44 9v17c0 14-8.5 23.5-20 28C12.5 49.5 4 40 4 26V9Z" fill="%23FF0288"/><path d="M15 28l6.5 6.5L37 18" stroke="%230D0A14" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+
+// A — HERITAGE: logo-faithful. magenta shield + white inner border + white check
+const A = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="${SHIELD}" fill="%23FF0288"/><g transform="translate(32 32) scale(0.8) translate(-32 -32)"><path d="${SHIELD}" fill="none" stroke="%23ffffff" stroke-width="3.7"/></g><path d="${CHECK}" fill="none" stroke="%23ffffff" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+
+// B — BOLD: sturdier/wider, no inner border, heavier white check (max legibility at 16px)
+const B = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="${SHIELD_WIDE}" fill="%23FF0288" stroke="%23C01068" stroke-width="1.2"/><path d="M19 33 L28.5 42 L47 21" fill="none" stroke="%23ffffff" stroke-width="7.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+
+// C — PREMIUM: crafted gradient + edge highlight + white check (matches dark glowing hero)
+const C = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs><radialGradient id="g" cx="40%25" cy="28%25" r="78%25"><stop offset="0%25" stop-color="%23FF74B7"/><stop offset="52%25" stop-color="%23FF0288"/><stop offset="100%25" stop-color="%23B80E60"/></radialGradient></defs><path d="${SHIELD}" fill="url(%23g)"/><path d="${SHIELD}" fill="none" stroke="%23ffffff" stroke-opacity="0.55" stroke-width="1"/><path d="${CHECK}" fill="none" stroke="%23ffffff" stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+
+function dataUri(svg){ return "data:image/svg+xml," + svg; }
+
+const CARDS = [
+  {key:"now", cls:"current", tag:"NOW", name:"Current (Fable)", svg:CURRENT,
+    desc:"Pointed top-center apex reads as a narrow “kite”; the check is ink-colored, not white like your logo."},
+  {key:"a", tag:"A · HERITAGE", name:"Logo-faithful", svg:A,
+    desc:"Flat-arched top, magenta shield, white inner border + white check — the closest match to your actual logo mark."},
+  {key:"b", tag:"B · BOLD", name:"Max-legibility", svg:B,
+    desc:"Wider, sturdier shield with a heavier white check. Drops the fine inner border so it stays unmistakable at 16px."},
+  {key:"c", tag:"C · PREMIUM", name:"Crafted + glowing", svg:C,
+    desc:"Radial-magenta gradient, thin edge highlight, white check — pairs with the dark, glowing particle-shield hero."},
+];
+
+function tab(uri, px, theme, label){
+  return `<div class="tab"><img src="${uri}" width="${px}" height="${px}" alt=""><span style="font-size:${px>=24?13:12}px">${label}</span><span class="x">×</span></div>`;
+}
+
+function big(uri, px){
+  return `<div class="big"><img src="${uri}" width="${px}" height="${px}" alt="" style="border-radius:${Math.round(px*0.10)}px"><span class="sz">${px}px</span></div>`;
+}
+
+const grid = document.getElementById("grid");
+for(const c of CARDS){
+  const uri = dataUri(c.svg);
+  const card = document.createElement("div");
+  card.className = "card " + (c.cls||"");
+  card.innerHTML = `
+    <div class="name"><h2>${c.name}</h2><span class="tag ${c.key==='now'?'now':''}">${c.tag}</span></div>
+    <p class="desc">${c.desc}</p>
+    <div class="row">
+      <span class="lbl">Light tab</span>
+      <div class="tabbar light">${tab(uri,16,"light","WebCare Solutions")}${tab(uri,32,"light","WebCare Solutions")}</div>
+    </div>
+    <div class="row">
+      <span class="lbl">Dark tab (your site is dark)</span>
+      <div class="tabbar dark">${tab(uri,16,"dark","WebCare Solutions")}${tab(uri,32,"dark","WebCare Solutions")}</div>
+    </div>
+    <div class="bigrow">${big(uri,48)}${big(uri,64)}${big(uri,180)}</div>
+    <div class="chip"><b>${c.key==='now'?'status':'ready'}</b> · ${c.key==='now'?'in index.html line 9':'SVG · scales to any size'}</div>
+  `;
+  grid.appendChild(card);
+}
+</script>
+</body>
+</html>

@@ -1320,6 +1320,26 @@ function initScene(canvas){
   var halo=new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(gcv),color:0xff7cc2,transparent:true,opacity:0,blending:THREE.AdditiveBlending,depthWrite:false}));
   halo.scale.set(2.6,2.6,1);
   shield.add(halo);
+  /* procedural chrome shield — extruded from the same outline the particles form; crystallizes at full formation (desktop tier) */
+  var shield3D=null,chromeMat=null;
+  if(!light){
+    var shp=new THREE.Shape();
+    for(i=0;i<=54;i++){
+      var tt=(i/54)*3,sii=Math.min(2,Math.floor(tt)),lti=tt-sii;
+      var pp=cubic(segs[sii],lti);
+      if(i===0)shp.moveTo(pp[0]*S,pp[1]*S);else shp.lineTo(pp[0]*S,pp[1]*S);
+    }
+    var sgeo=new THREE.ExtrudeGeometry(shp,{depth:0.25,bevelEnabled:true,bevelThickness:0.08,bevelSize:0.08,bevelSegments:3,steps:1});
+    sgeo.center();
+    chromeMat=new THREE.ShaderMaterial({transparent:true,depthWrite:false,
+      uniforms:{uForm:{value:0},uColorA:{value:new THREE.Color(0xff74b7)},uColorB:{value:new THREE.Color(0x7a6cf5)},uRim:{value:new THREE.Color(0xffffff)}},
+      vertexShader:'varying vec3 vN; varying vec3 vV;\nvoid main(){ vN=normalize(normalMatrix*normal); vec4 mv=modelViewMatrix*vec4(position,1.0); vV=normalize(-mv.xyz); gl_Position=projectionMatrix*mv; }',
+      fragmentShader:'varying vec3 vN; varying vec3 vV; uniform vec3 uColorA,uColorB,uRim; uniform float uForm;\nvoid main(){ float fr=pow(1.0-max(dot(vN,vV),0.0),2.5); vec3 base=mix(uColorA,uColorB,fr); vec3 col=mix(base,uRim,fr*0.8)+uColorA*0.25*uForm; gl_FragColor=vec4(col,1.0); }'});
+    shield3D=new THREE.Mesh(sgeo,chromeMat);
+    shield3D.scale.setScalar(0.0001);
+    shield3D.visible=false;
+    shield.add(shield3D);
+  }
 
   /* ambient dust for depth */
   var DN=light?110:240;
@@ -1395,6 +1415,14 @@ function initScene(canvas){
     glowMat.opacity=0.1+f*0.38;
     sPts.material.size=sBase*(1+f*0.12);
     shield.rotation.y=Math.sin(t*0.16)*0.05;
+    if(shield3D){
+      var cf=f;
+      shield3D.visible=true;
+      shield3D.scale.setScalar(Math.max(0.0001,cf*cf));
+      shield3D.rotation.y=Math.sin(t*0.16)*0.05+cf*0.35;
+      chromeMat.uniforms.uForm.value=cf;
+      sMat.opacity=0.92-Math.max(0,cf-0.7)*0.8;
+    }
     dust.rotation.y=t*0.008;
 
     st.cmx+=(st.mx-st.cmx)*0.04; st.cmy+=(st.my-st.cmy)*0.04;

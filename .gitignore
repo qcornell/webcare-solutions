@@ -7,3 +7,6 @@ _render-icons.cjs
 
 # netlify build output
 dist/
+
+# local marketing/social graphics — not part of the website
+marketing/

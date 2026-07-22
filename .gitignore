@@ -8,5 +8,8 @@ _render-icons.cjs
 # netlify build output
 dist/
 
+# isolated development worktrees
+.worktrees/
+
 # local marketing/social graphics — not part of the website
 marketing/

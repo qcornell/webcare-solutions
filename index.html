@@ -1218,7 +1218,7 @@ function initScene(canvas){
   var dot=new THREE.CanvasTexture(dcv);
 
   /* --- particle-mesh landscape (points + connecting lines share one buffer) --- */
-  var gx=light?64:126, gz=light?36:72, pw=56, pd=32;
+  var gx=light?44:126, gz=light?26:72, pw=56, pd=32;
   var nv=(gx+1)*(gz+1);
   var pos=new Float32Array(nv*3), col=new Float32Array(nv*3);
   var xs=new Float32Array(nv), zs=new Float32Array(nv);
@@ -1236,7 +1236,7 @@ function initScene(canvas){
   posAttr.setUsage&&posAttr.setUsage(THREE.DynamicDrawUsage);
   geo.setAttribute('position',posAttr);
   geo.setAttribute('color',new THREE.BufferAttribute(col,3));
-  var pts=new THREE.Points(geo,new THREE.PointsMaterial({size:light?0.16:0.12,map:dot,vertexColors:true,transparent:true,opacity:0.88,depthWrite:false,blending:THREE.AdditiveBlending,sizeAttenuation:true}));
+  var pts=new THREE.Points(geo,new THREE.PointsMaterial({size:light?0.16:0.12,map:dot,vertexColors:true,transparent:true,opacity:light?0.58:0.88,depthWrite:false,blending:THREE.AdditiveBlending,sizeAttenuation:true}));
   var idx=[];
   for(j=0;j<=gz;j++){for(i=0;i<gx;i++){var a=j*(gx+1)+i;idx.push(a,a+1);}}
   for(j=0;j<gz;j++){for(i=0;i<=gx;i++){var b=j*(gx+1)+i;idx.push(b,b+gx+1);}}
@@ -1322,7 +1322,7 @@ function initScene(canvas){
   shield.add(halo);
 
   /* ambient dust for depth */
-  var DN=light?110:240;
+  var DN=light?55:240;
   var dPos=new Float32Array(DN*3);
   for(i=0;i<DN;i++){dPos[i*3]=(Math.random()*2-1)*26;dPos[i*3+1]=(Math.random()*2-1)*6+1;dPos[i*3+2]=-9+Math.random()*10;}
   var dGeo=new THREE.BufferGeometry();dGeo.setAttribute('position',new THREE.BufferAttribute(dPos,3));

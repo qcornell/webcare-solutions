@@ -219,8 +219,11 @@ img{max-width:100%;display:block}
 .hero-sub{font-size:var(--fs-600);color:var(--t-light-mut);max-width:64ch;margin-bottom:38px}
 .hero-sub b{color:var(--t-light);font-weight:600}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
-.hero-note{margin-top:30px;font-size:.9rem;color:var(--t-light-mut);opacity:.85}
-.hero-note b{color:var(--accent-soft);font-weight:600}
+.hero-check{display:inline-flex;align-items:center;gap:8px;margin-top:18px;color:var(--accent-soft);font:600 .92rem/1.4 var(--body);text-decoration-line:underline;text-decoration-color:rgba(255,124,194,.38);text-decoration-thickness:1px;text-underline-offset:5px;transition:color .25s,text-decoration-color .25s}
+.hero-check svg{flex:none;transition:transform .3s ease}
+.hero-check:hover{color:#FFD0E8;text-decoration-color:currentColor}
+.hero-check:hover svg,.hero-check:focus-visible svg{transform:translateX(3px)}
+.hero-note{margin-top:18px;font-size:.84rem;color:var(--t-light-mut);opacity:.9}
 .scroll-cue{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--t-light-mut);font:500 .72rem/1 var(--body);letter-spacing:.26em;text-transform:uppercase}
 .scroll-cue::after{content:"";width:2px;height:44px;background:linear-gradient(var(--accent),transparent);border-radius:2px;animation:cue 2.2s ease-in-out infinite}
 @keyframes cue{0%,100%{transform:scaleY(.4);transform-origin:top;opacity:.4}50%{transform:scaleY(1);opacity:1}}
@@ -476,7 +479,7 @@ img{max-width:100%;display:block}
       </ul>
     </nav>
     <a class="btn btn-g" href="tel:+19795956330">(979) 595-6330</a>
-    <a class="btn btn-p mag" href="#contact">Start a project</a>
+    <a class="btn btn-p mag" href="#contact">Start your website</a>
     <button class="burger" id="burger" aria-expanded="false" aria-controls="mmenu" aria-label="Open menu"><span></span></button>
   </div>
 </header>
@@ -488,9 +491,9 @@ img{max-width:100%;display:block}
       <li><a class="mlink" href="#work">Work</a></li>
       <li><a class="mlink" href="#difference">The WebCare Difference</a></li>
       <li><a class="mlink" href="#process">Process</a></li>
-      <li><a class="mlink" href="#contact">Start a project</a></li>
+      <li><a class="mlink" href="#contact">Start your website</a></li>
     </ul>
-    <a class="btn btn-p" href="#contact">Start a project</a>
+    <a class="btn btn-p" href="#contact">Start your website</a>
     <a class="mtel" href="tel:+19795956330">Or call us — <b>(979) 595-6330</b></a>
   </nav>
 </div>
@@ -520,9 +523,9 @@ img{max-width:100%;display:block}
     <div class="hero-cta">
       <a class="btn btn-p mag" href="#contact">Start your website<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <a class="btn btn-g mag" href="tel:+19795956330"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 2.5h2.6l1.2 3-1.7 1.3a10 10 0 0 0 4.1 4.1l1.3-1.7 3 1.2v2.6a1 1 0 0 1-1.1 1A12.4 12.4 0 0 1 2 3.6a1 1 0 0 1 1-1.1Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>Call (979) 595-6330</a>
-      <a class="btn btn-g mag" href="#site-check">Free 60-second website check</a>
     </div>
-    <p class="hero-note">Churches · Businesses · E-commerce — <b>no templates, no vanishing acts.</b></p>
+    <a class="hero-check" href="#site-check">Free 60-second website check<svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 3.5 13.5 8 9 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <p class="hero-note">Custom-built · Monthly care · Local support.</p>
     </div>
   </div>
   <div class="scroll-cue" aria-hidden="true">Scroll</div>
@@ -1013,7 +1016,7 @@ img{max-width:100%;display:block}
     <div class="sc-sticky">
       <strong>Ready when you are.</strong>
       <span class="sc-actions">
-        <a class="btn btn-p mag" href="#contact">Start a project</a>
+        <a class="btn btn-p mag" href="#contact">Start your website</a>
         <a class="btn btn-g" href="tel:+19795956330">(979) 595-6330</a>
       </span>
     </div>
@@ -1023,7 +1026,7 @@ img{max-width:100%;display:block}
 <!-- sticky mobile bar -->
 <div class="mbar" id="mbar" role="navigation" aria-label="Quick actions">
   <a class="btn btn-g" href="tel:+19795956330">Call us</a>
-  <a class="btn btn-p" href="#contact">Start a project</a>
+  <a class="btn btn-p" href="#contact">Start your website</a>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>

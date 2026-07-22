@@ -200,6 +200,40 @@ const checks = {
       [390, 844, "mob"],
     ]) {
       const { browser, page, errors } = await loadPage({ width: w, height: h });
+      const state = await page.evaluate(() => {
+        const primary = document.querySelector(".hero-cta .btn-p");
+        const phone = document.querySelector('.hero-cta a[href^="tel:"]');
+        const siteCheck = document.querySelector('.hero a[href="#site-check"]');
+        const note = document.querySelector(".hero-note");
+        const surfaceLabels = Array.from(
+          document.querySelectorAll(
+            '#nav a[href="#contact"], #mmenu a[href="#contact"], #stickycta a[href="#contact"], #mbar a[href="#contact"]',
+          ),
+          (el) => el.textContent.trim(),
+        );
+        return {
+          primaryText: primary && primary.textContent.trim(),
+          phoneText: phone && phone.textContent.trim(),
+          siteCheckText: siteCheck && siteCheck.textContent.trim(),
+          siteCheckIsButton: !!(siteCheck && siteCheck.classList.contains("btn")),
+          siteCheckInsideActions: !!(siteCheck && siteCheck.closest(".hero-cta")),
+          noteText: note && note.textContent.trim(),
+          surfaceLabels,
+        };
+      });
+      const semanticOk =
+        state.primaryText === "Start your website" &&
+        state.phoneText === "Call (979) 595-6330" &&
+        state.siteCheckText === "Free 60-second website check" &&
+        !state.siteCheckIsButton &&
+        !state.siteCheckInsideActions &&
+        state.noteText === "Custom-built · Monthly care · Local support." &&
+        state.surfaceLabels.length === 5 &&
+        state.surfaceLabels.every((label) => label === "Start your website");
+      console.log(`${n}: hero semantics=${semanticOk} ${JSON.stringify(state)}`);
+      if (!semanticOk) {
+        process.exitCode = 1;
+      }
       const cls = await page.evaluate(() => document.documentElement.className);
       const hasCanvas = await page.evaluate(() => !!document.getElementById("gl"));
       console.log(`${n}: class="${cls}" canvas=${hasCanvas} errors=${errors.length}`);

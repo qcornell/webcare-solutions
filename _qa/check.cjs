@@ -197,6 +197,7 @@ const checks = {
   hero: async () => {
     for (const [w, h, n] of [
       [1440, 900, "desk"],
+      [768, 1024, "tab"],
       [390, 844, "mob"],
     ]) {
       const { browser, page, errors } = await loadPage({ width: w, height: h });
@@ -205,6 +206,21 @@ const checks = {
         const phone = document.querySelector('.hero-cta a[href^="tel:"]');
         const siteCheck = document.querySelector('.hero a[href="#site-check"]');
         const note = document.querySelector(".hero-note");
+        const copy = document.querySelector(".hero-copy");
+        const eye = document.querySelector(".hero-eye");
+        const box = (el) => {
+          const r = el.getBoundingClientRect();
+          return { left: r.left, right: r.right, top: r.top, bottom: r.bottom, width: r.width, height: r.height };
+        };
+        const geometry = {
+          viewportWidth: window.innerWidth,
+          viewportHeight: window.innerHeight,
+          documentWidth: document.documentElement.scrollWidth,
+          copy: box(copy),
+          eye: box(eye),
+          primary: box(primary),
+          phone: box(phone),
+        };
         const surfaceLabels = Array.from(
           document.querySelectorAll(
             '#nav a[href="#contact"], #mmenu a[href="#contact"], #stickycta a[href="#contact"], #mbar a[href="#contact"]',
@@ -220,6 +236,7 @@ const checks = {
           siteCheckHeight: siteCheck && siteCheck.getBoundingClientRect().height,
           noteText: note && note.textContent.trim(),
           surfaceLabels,
+          geometry,
         };
       });
       const semanticOk =
@@ -233,6 +250,26 @@ const checks = {
         state.surfaceLabels.every((label) => label === "Start your website");
       console.log(`${n}: hero semantics=${semanticOk} ${JSON.stringify(state)}`);
       if (!semanticOk) {
+        process.exitCode = 1;
+      }
+      const g = state.geometry;
+      const insideViewport =
+        g.documentWidth === g.viewportWidth &&
+        g.copy.left >= 0 &&
+        g.copy.right <= g.viewportWidth &&
+        g.eye.left >= 0 &&
+        g.eye.right <= g.viewportWidth;
+      const layoutOk = n === "mob"
+        ? g.primary.height >= 52 &&
+          g.phone.height >= 52 &&
+          g.primary.width >= g.copy.width - 2 &&
+          g.phone.width >= g.copy.width - 2 &&
+          g.phone.top >= g.primary.bottom &&
+          g.copy.bottom <= g.viewportHeight - 24
+        : Math.abs(g.primary.top - g.phone.top) <= 2 &&
+          g.phone.left > g.primary.right;
+      console.log(`${n}: hero layout=${insideViewport && layoutOk} ${JSON.stringify(g)}`);
+      if (!insideViewport || !layoutOk) {
         process.exitCode = 1;
       }
       const siteCheckHeightOk = state.siteCheckHeight >= 52;
@@ -254,6 +291,8 @@ const checks = {
         await page.mouse.wheel(0, 620);
         await page.waitForTimeout(350);
         await page.screenshot({ path: `${SHOTS}/hero-formed.png` });
+      } else if (n === "mob") {
+        await page.screenshot({ path: `${SHOTS}/hero-mobile.png` });
       }
       await browser.close();
     }

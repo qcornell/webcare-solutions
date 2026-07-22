@@ -217,6 +217,7 @@ const checks = {
           siteCheckText: siteCheck && siteCheck.textContent.trim(),
           siteCheckIsButton: !!(siteCheck && siteCheck.classList.contains("btn")),
           siteCheckInsideActions: !!(siteCheck && siteCheck.closest(".hero-cta")),
+          siteCheckHeight: siteCheck && siteCheck.getBoundingClientRect().height,
           noteText: note && note.textContent.trim(),
           surfaceLabels,
         };
@@ -232,6 +233,13 @@ const checks = {
         state.surfaceLabels.every((label) => label === "Start your website");
       console.log(`${n}: hero semantics=${semanticOk} ${JSON.stringify(state)}`);
       if (!semanticOk) {
+        process.exitCode = 1;
+      }
+      const siteCheckHeightOk = state.siteCheckHeight >= 52;
+      console.log(
+        `${n}: hero-check height>=52=${siteCheckHeightOk} actual=${state.siteCheckHeight}`,
+      );
+      if (!siteCheckHeightOk) {
         process.exitCode = 1;
       }
       const cls = await page.evaluate(() => document.documentElement.className);

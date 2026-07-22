@@ -1,6 +1,6 @@
 # WebCare Hero Readability and Conversion Refinement
 
-**Date:** 2026-07-22  
+**Date:** 2026-07-22
 **Status:** Approved direction, based on the screenshot critique and the user's instruction to improve it
 
 ## Subject, audience, and job

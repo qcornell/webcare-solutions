@@ -1,12 +1,23 @@
 // WebCare Solutions QA harness — domain-honest "tests" for a visual single-file site.
 // Run: node _qa/check.cjs <name>   (from the webcare-solutions project folder)
 const path = require("path");
-const { chromium } = require(path.resolve("C:/moltbot/node_modules/playwright"));
+const playwrightSearchPaths = [
+  path.resolve(__dirname, ".."),
+  "C:/moltbot",
+  process.env.USERPROFILE &&
+    path.resolve(
+      process.env.USERPROFILE,
+      ".cache/codex-runtimes/codex-primary-runtime/dependencies/node",
+    ),
+].filter(Boolean);
+const { chromium } = require(require.resolve("playwright", { paths: playwrightSearchPaths }));
 const ROOT = "file://" + path.resolve(__dirname, "..", "index.html");
 const SHOTS = path.resolve(__dirname, "_shots");
 
 async function loadPage({ width = 1440, height = 900, reduce = false, noFx = false } = {}) {
-  const browser = await chromium.launch();
+  const browser = await chromium.launch({
+    channel: process.env.PLAYWRIGHT_CHANNEL || "chrome",
+  });
   const ctx = await browser.newContext({ deviceScaleFactor: 2 });
   const page = await ctx.newPage();
   const errors = [];

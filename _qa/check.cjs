@@ -14,7 +14,13 @@ const { chromium } = require(require.resolve("playwright", { paths: playwrightSe
 const ROOT = "file://" + path.resolve(__dirname, "..", "index.html");
 const SHOTS = path.resolve(__dirname, "_shots");
 
-async function loadPage({ width = 1440, height = 900, reduce = false, noFx = false } = {}) {
+async function loadPage({
+  width = 1440,
+  height = 900,
+  reduce = false,
+  noFx = false,
+  now = null,
+} = {}) {
   const browser = await chromium.launch({
     channel: process.env.PLAYWRIGHT_CHANNEL || "chrome",
   });
@@ -27,6 +33,19 @@ async function loadPage({ width = 1440, height = 900, reduce = false, noFx = fal
     }
   });
   page.on("pageerror", (e) => errors.push(String(e)));
+  if (now) {
+    await page.addInitScript((fixedNow) => {
+      const NativeDate = Date;
+      window.Date = class extends NativeDate {
+        constructor(...args) {
+          super(...(args.length ? args : [fixedNow]));
+        }
+        static now() {
+          return fixedNow;
+        }
+      };
+    }, Date.parse(now));
+  }
   if (reduce) {
     await page.emulateMedia({ reducedMotion: "reduce" });
   }
@@ -83,6 +102,59 @@ const checks = {
       await browser.close();
     }
     if (fail) {
+      process.exitCode = 1;
+    }
+  },
+  promo: async () => {
+    const activeLoad = await loadPage({ now: "2026-08-15T17:00:00Z" });
+    const active = await activeLoad.page.evaluate(() => ({
+      expired: document.documentElement.classList.contains("promo-over"),
+      banner: document.querySelector(".promo-bar").textContent.replace(/\s+/g, " ").trim(),
+      bannerDisplay: getComputedStyle(document.querySelector(".promo-bar")).display,
+      clockDisplay: getComputedStyle(document.querySelector(".deal-bar")).display,
+      discounts: Array.from(document.querySelectorAll(".design-row .now"), (el) =>
+        el.textContent.trim(),
+      ),
+    }));
+    await activeLoad.browser.close();
+
+    const expiredLoad = await loadPage({ now: "2026-09-01T05:00:00Z" });
+    const expired = await expiredLoad.page.evaluate(() => ({
+      expired: document.documentElement.classList.contains("promo-over"),
+      bannerDisplay: getComputedStyle(document.querySelector(".promo-bar")).display,
+      clockDisplay: getComputedStyle(document.querySelector(".deal-bar")).display,
+      promoPricesHidden: Array.from(
+        document.querySelectorAll(".design-row .now"),
+        (el) => getComputedStyle(el).display === "none",
+      ).every(Boolean),
+      standardPrices: Array.from(document.querySelectorAll(".design-row .was"), (el) => ({
+        text: el.textContent.trim(),
+        decoration: getComputedStyle(el).textDecorationLine,
+      })),
+    }));
+    await expiredLoad.browser.close();
+
+    const activeOk =
+      !active.expired &&
+      active.bannerDisplay !== "none" &&
+      active.clockDisplay !== "none" &&
+      /August special/i.test(active.banner) &&
+      /ends August 31/i.test(active.banner) &&
+      active.discounts.join("|") === "$100|FREE|FREE" &&
+      activeLoad.errors.length === 0;
+    const expiredOk =
+      expired.expired &&
+      expired.bannerDisplay === "none" &&
+      expired.clockDisplay === "none" &&
+      expired.promoPricesHidden &&
+      expired.standardPrices.every(
+        (price) => price.text === "$200" && price.decoration === "none",
+      ) &&
+      expiredLoad.errors.length === 0;
+
+    console.log("August promotion active:", activeOk, active);
+    console.log("August promotion expired:", expiredOk, expired);
+    if (!activeOk || !expiredOk) {
       process.exitCode = 1;
     }
   },

@@ -30,7 +30,7 @@
 - Consumes: the existing `loadPage(options)` Playwright helper and the page's `promo-over` class behavior.
 - Produces: `loadPage({ now })`, where `now` is an optional ISO timestamp used as the browser's fixed current time; a `promo` QA command; August promotion copy and deadline in `index.html`.
 
-- [ ] **Step 1: Add the failing August promotion check**
+- [x] **Step 1: Add the failing August promotion check**
 
 Extend `loadPage` to accept `now` and install a fixed browser clock before navigation:
 
@@ -128,7 +128,7 @@ promo: async () => {
 },
 ```
 
-- [ ] **Step 2: Run the new check and verify it fails for the expired July campaign**
+- [x] **Step 2: Run the new check and verify it fails for the expired July campaign**
 
 Run:
 
@@ -138,7 +138,7 @@ node _qa/check.cjs promo
 
 Expected: FAIL because the August 15 browser state has `promo-over`, and the banner still says `July 31` rather than `August special` and `August 31`.
 
-- [ ] **Step 3: Make the minimal August campaign update**
+- [x] **Step 3: Make the minimal August campaign update**
 
 In both repeated banner sequences in `index.html`, replace the campaign copy with:
 
@@ -155,7 +155,7 @@ Update the countdown comment and deadline:
   var END=new Date('2026-09-01T04:59:59Z');
 ```
 
-- [ ] **Step 4: Run the promotion check and verify both time states pass**
+- [x] **Step 4: Run the promotion check and verify both time states pass**
 
 Run:
 
@@ -165,7 +165,7 @@ node _qa/check.cjs promo
 
 Expected: PASS with `August promotion active: true` and `August promotion expired: true`.
 
-- [ ] **Step 5: Run the existing browser regression checks**
+- [x] **Step 5: Run the existing browser regression checks**
 
 Run:
 
@@ -176,7 +176,7 @@ node _qa/check.cjs hero
 
 Expected: both desktop and mobile report zero errors and zero overflow; all hero semantic, layout, and tap-target checks pass.
 
-- [ ] **Step 6: Inspect the final diff and commit the campaign update**
+- [x] **Step 6: Inspect the final diff and commit the campaign update**
 
 Run:
 
